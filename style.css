@@ -4,3 +4,28 @@
   left: 50%;
   transform: translate(-50%,-50%);
 }
+
+.left-panel {
+  position: absolute;
+  top:50%;
+  left:25%;
+  width:20%;
+  height: 80%;
+  background-color:blue;
+}
+
+.middle-panel {
+  position:absolute;
+  top:50%;
+  width:40%;
+  height:80%;
+  background-color:red;
+}
+
+.right-panel {
+ position:absolute;
+  top:50%;
+  width:20%;
+  height:80%;
+  background-color:green;
+}
