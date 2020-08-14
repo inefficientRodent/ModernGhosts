@@ -5,27 +5,26 @@
   transform: translate(-50%,-50%);
 }
 
-.left-panel {
-  position: absolute;
-  top:50%;
-  left:25%;
-  width:20%;
-  height: 80%;
+.panel {
+  float:left;
+  padding:10%;
+  height:80%;
+}
+
+.left, .right {
+  width:30%;
   background-color:blue;
 }
 
-.middle-panel {
-  position:absolute;
+.middle {
   top:50%;
   width:40%;
   height:80%;
   background-color:red;
 }
 
-.right-panel {
- position:absolute;
-  top:50%;
-  width:20%;
-  height:80%;
-  background-color:green;
+.row:after {
+  content:"";
+  display:table;
+  clear:both;
 }
