@@ -7,19 +7,19 @@
 
 .panel {
   float:left;
-  padding:10%;
-  height:80%;
+  padding:20px;
+  height:600px;
 }
 
 .left, .right {
-  width:30%;
+  min-width:30%;
+  max-width:60%;
   background-color:blue;
 }
 
 .middle {
-  top:50%;
-  width:40%;
-  height:80%;
+  min-width:40%;
+  max-width:80%;
   background-color:red;
 }
 
