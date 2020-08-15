@@ -1,4 +1,8 @@
-
+.center-element {
+  position: absolute;
+  top: 20px;
+  left: 10%;
+}
 
 * {
  box-sizing:border-box; 
@@ -17,13 +21,6 @@
 .middle {
   width:40%;
   background-color:red;
-}
-
-.row {
-  position: absolute;
-  top:  50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
 }
 
 .row:after {
