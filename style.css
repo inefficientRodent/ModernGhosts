@@ -1,37 +1,20 @@
-.center-element {
-  position:absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  margin: auto;
-  width: 50vw; height: 50vh;
+.left {
+  left:0px;
+  width:250px;
+  height:800px;
 }
 
-* {
- box-sizing:border-box; 
+.right {
+  right:0px;
+  width:250px;
+  height:800px;
 }
 
 .panel {
-  float:left;
-  padding:20px;
-  min-width:100px;
-  height:500px;
+  position:fixed;
 }
 
-.left, .right {
-  width:20%;
-  background-color:blue;
-}
-
-.middle {
-  width:40%;
-  background-color:red;
-}
-
-.row {
- height:900px; 
-}
-
-.row:after {
-  content:"";
-  display:table;
-  clear:both;
+.bottom-panel {
+  bottom:0px;
+  height:20px;
 }
