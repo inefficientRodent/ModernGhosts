@@ -41,3 +41,17 @@
   width:25px;
   padding:5px;
 }
+
+.clownbutton {
+	background:#de4242;
+	border-radius:90px;
+	color:#FFFFFF;
+	font-size:17px;
+	font-weight:bold;
+	padding:30px 20px;
+}
+
+.clownbutton:active {
+	position:relative;
+	top:1px;
+}
