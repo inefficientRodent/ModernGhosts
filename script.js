@@ -1,21 +1,39 @@
+var savegame = JSON.parse(localStorage.getItem("goldMinerSave"))
+if (savegame !== null) {
+  gameData = savegame
+}
+
 var gameData = {
   //basic variables
   varCash: 0,
   perPerform: 1,
+  varPassiveIncome: 0,
   varFear: 0,
   varContempt: 0,
-  clownLimit:0,
+  varClownLimit:0,
   
   //Clown Purchase Variables
-  comedyCost: 10,
-  comedyRatio: 1.15,
+  comedyCost: 20,
+  jugglingCost: 125,
+  balancingCost: 999,
   
-  jugglingCost: 150,
-  jugglingRatio: 1.12,
+  //Building amounts
+  varTent: 0,
+  tentCost: 10,
   
-  balancingCost:,
-  balancingRatio:,
+  varClownvan: 50,
+  vanCost:0,
+  
+  varMotel: 0,
+  motelCost:0,
+  
+  varClowndo:0,
+  clowndoCost: 0,
 }
+
+
+
+
 
 function perform() {
   gameData.varCash += gameData.perPerform
@@ -23,26 +41,76 @@ function perform() {
 }
 
 //Purchasing function, pass in clownType as selection via button click function storePurchase(var)
-function storePurchase(clownType) {
+//Potential to make this do x10, x100 at later date? Pass in two variables - clownType and amount ???
+function clownPurchase(clownType) {
   if (clownType = "comedy") {
     if (gameData.varCash >= gameData.comedyCost) {
       gameData.varCash -= gameData.comedyCost
-      gameData.perPerform += 0.1
+      gameData.perPerform += 0.5
       gameData.comedyCost *= 1.1
+      document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
     }
   }
   if (clownType = "juggling") {
     if (gameData.varCash >= gameData.jugglingCost) {
       gameData.varCash -= gameData.jugglingCost
-      gameData.passiveIncome += 0.5
-      gameData.jugglingCost *= 
+      gameData.varPassiveIncome += 0.15
+      gameData.jugglingCost *= 1.09
     }
   }
   if (clownType = "balancing") {
     if (gameData.varCash >= gameData.balancingCost) {
       gameData.varCash -= gameData.balancingCost
-      gameData.passiveIncome +== 00
+      gameData.varPassiveIncome +== 00
       gameData.balancingCost *= 00
     }
   }
+  if (clownType = "animal") {
+    if (gameData.varCash >= gameData.animalCost) {
+      gameData.varCash -= gameData.animalCost
+      gameData.varPassiveIncome += 00
+      gameData.animalCost *=00
+    }
+  }
+    //MORE WILL FOLLOW i just got lazy and this is a prototype :)
 }
+
+  
+function upgradePurchase(upgradeType) {
+  
+}
+  
+function buildingPurchase(buildType) {
+  if (buildType = "") {
+    
+  }
+  
+  if (buildType = "") {
+    
+  }
+  
+  if (buildType = "") {
+    
+  }
+  
+  if (buildType = "") {
+    
+  }
+  
+  if (buildType = "") {
+    
+  }
+  
+  if (buildType = "") {
+    
+  }
+}
+
+
+var mainGameLoop = window.setInterval(function() {
+  
+}, 1000)
+
+var saveGameLoop = window.setInterval(function() {
+  localStorage.setItem("ClownCircus", JSON.stringify(gameData))
+}, 15000)
