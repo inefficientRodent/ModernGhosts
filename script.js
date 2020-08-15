@@ -61,7 +61,7 @@ function clownPurchase(clownType) {
   if (clownType = "balancing") {
     if (gameData.varCash >= gameData.balancingCost) {
       gameData.varCash -= gameData.balancingCost
-      gameData.varPassiveIncome +== 00
+      gameData.varPassiveIncome += 00
       gameData.balancingCost *= 00
     }
   }
