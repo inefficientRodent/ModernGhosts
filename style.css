@@ -12,6 +12,8 @@
 .panel {
   float:left;
   padding:20px;
+  min-width:100px;
+  height:80%;
 }
 
 .left, .right {
