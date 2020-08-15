@@ -5,6 +5,10 @@
   transform: translate(-50%,-50%);
 }
 
+* {
+ box-sizing:border-box; 
+}
+
 .panel {
   float:left;
   padding:20px;
@@ -16,7 +20,7 @@
 }
 
 .middle {
-  width:60%;
+  width:50%;
   background-color:red;
 }
 
