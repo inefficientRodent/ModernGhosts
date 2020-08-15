@@ -1,10 +1,8 @@
 .center-element {
-  width:90%;
-  position: absolute;
-  top: 20px;
-  margin-left: 10%;
-  margin-right: 10%;
-  max-width:1650px;
+  position:absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+  width: 50vw; height: 50vh;
 }
 
 * {
