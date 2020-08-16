@@ -46,7 +46,7 @@ function clownPurchase(clownType) {
   if (clownType == "comedy") {
     if (gameData.varCash >= gameData.comedyCost) {
       gameData.varCash -= gameData.comedyCost
-      gameData.perPerform += 0.5
+      gameData.perPerform += 1
       gameData.comedyCost *= 1.1
       gameData.comedyCost = (gameData.comedyCost).toFixed(2)
       document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
@@ -78,7 +78,7 @@ function clownPurchase(clownType) {
     //MORE WILL FOLLOW i just got lazy and this is a prototype :)
   
   //Updating the current cash after spending!
-  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
+  document.getElementById("currentCash").innerHTML = "You currently have: $" + gameData.varCash
 }
 
 function upgradePurchase(upgradeType) {
@@ -114,6 +114,7 @@ function buildingPurchase(buildType) {
 //Per second
 var mainGameLoop = window.setInterval(function() {
   document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
+  document.getElementById("currentCash").innerHTML = "You currently have: $" + gameData.varCash
   
   //For later use - adds varPassiveIncome to varCash every second
   gameData.varCash += gameData.varPassiveIncome
