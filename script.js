@@ -48,6 +48,7 @@ function clownPurchase(clownType) {
       gameData.varCash -= gameData.comedyCost
       gameData.perPerform += 0.5
       gameData.comedyCost *= 1.1
+      gameData.comedyCost = (gameData.comedyCost).toFixed(2)
       document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
     }
   }
@@ -56,6 +57,8 @@ function clownPurchase(clownType) {
       gameData.varCash -= gameData.jugglingCost
       gameData.varPassiveIncome += 0.15
       gameData.jugglingCost *= 1.09
+      gameData.jugglingCost = (gameData.jugglingCost).toFixed(2)
+      //put document.getElementById for juggling et al down here
     }
   }
   if (clownType == "balancing") {
@@ -105,11 +108,12 @@ function buildingPurchase(buildType) {
   }
 }
 
-
+//Per second
 var mainGameLoop = window.setInterval(function() {
-  
+  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
 }, 1000)
 
+//Per 15 seconds
 var saveGameLoop = window.setInterval(function() {
   localStorage.setItem("ClownCircus", JSON.stringify(gameData))
 }, 15000)
