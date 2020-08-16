@@ -37,7 +37,7 @@ function debugLodesMone(money) {
 
 function perform() {
   gameData.varCash += gameData.perPerform
-  document.getElementById("currentCash").innerHTML = "$" + gameData.varCash
+  document.getElementById("currentCash").innerHTML = "You currently have: $" + gameData.varCash
 }
 
 //Purchasing function, pass in clownType as selection via button click function storePurchase(var)
@@ -111,6 +111,9 @@ function buildingPurchase(buildType) {
 //Per second
 var mainGameLoop = window.setInterval(function() {
   document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
+  
+  //For later use - adds varPassiveIncome to varCash every second
+  gameData.varCash += gameData.varPassiveIncome
 }, 1000)
 
 //Per 15 seconds
