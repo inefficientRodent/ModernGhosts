@@ -31,8 +31,8 @@ var gameData = {
   clowndoCost: 0
 }
 
-function debugPrintGameData() {
-  print(gameData)
+function debugLodesMone(money) {
+  gameData.varCash = money
 }
 
 function perform() {
