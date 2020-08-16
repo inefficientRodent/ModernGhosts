@@ -113,8 +113,8 @@ function buildingPurchase(buildType) {
 
 //Per second
 var mainGameLoop = window.setInterval(function() {
-  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
-  document.getElementById("currentCash").innerHTML = "You currently have: $" + gameData.varCash
+  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
+  document.getElementById("currentCash").innerHTML = "You currently have: $" + ((gameData.varCash).toFixed(2))
   
   //For later use - adds varPassiveIncome to varCash every second
   if (gameData.varPassiveIncome > 0) {
