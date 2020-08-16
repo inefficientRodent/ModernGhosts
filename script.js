@@ -76,6 +76,9 @@ function clownPurchase(clownType) {
     }
   }
     //MORE WILL FOLLOW i just got lazy and this is a prototype :)
+  
+  //Updating the current cash after spending!
+  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
 }
 
 function upgradePurchase(upgradeType) {
