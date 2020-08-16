@@ -37,7 +37,7 @@ function debugLodesMone(money) {
 
 function perform() {
   gameData.varCash = gameData.varCash + gameData.perPerform
-  document.getElementById("currentCash").innerHTML = "You currently have: $" + gameData.varCash
+  document.getElementById("currentCash").innerHTML = "You currently have: $" + ((gameData.varCash).toFixed(2))
 }
 
 //Purchasing function, pass in clownType as selection via button click function storePurchase(var)
