@@ -46,9 +46,10 @@ function clownPurchase(clownType) {
   if (clownType == "comedy") {
     if (gameData.varCash >= gameData.comedyCost) {
       gameData.varCash -= gameData.comedyCost
-      gameData.perPerform += 1
+      gameData.perPerform += 0.5
       gameData.comedyCost *= 1.1
       gameData.comedyCost = (gameData.comedyCost).toFixed(2)
+      gameData.varCash = (gameData.varCash).toFixed(2)
       document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
     }
   }
@@ -58,6 +59,7 @@ function clownPurchase(clownType) {
       gameData.varPassiveIncome += 0.15
       gameData.jugglingCost *= 1.09
       gameData.jugglingCost = (gameData.jugglingCost).toFixed(2)
+      gameData.varCash = (gameData.varCash).toFixed(2)
       //put document.getElementById for juggling et al down here
     }
   }
