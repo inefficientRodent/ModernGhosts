@@ -19,6 +19,9 @@
 }
 
 .bottom-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   right:0px;
   bottom:0px;
   height:170px;
@@ -59,4 +62,14 @@
 .storeOption {
 	border: 1px solid black;
 	background-color: #bd0101;
+	
+}
+
+.playerButtons {
+  	background:#FCF8F8;
+	border-radius:90px;
+	color:#CC3D3D;
+	font-size:17px;
+	font-weight:bold;
+	padding:10px 10px;
 }
