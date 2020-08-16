@@ -8,8 +8,8 @@ var gameData = {
   varCash: 0.00,
   perPerform: 1.0,
   varPassiveIncome: 0.0,
-  varFear: 0,
-  varContempt: 0,
+  varFear: 0.0,
+  varContempt: 0.0,
   varClownLimit:0,
   
   //Clown Purchase Variables
@@ -36,7 +36,7 @@ function debugLodesMone(money) {
 }
 
 function perform() {
-  gameData.varCash += gameData.perPerform
+  gameData.varCash = gameData.varCash + gameData.perPerform
   document.getElementById("currentCash").innerHTML = "You currently have: $" + gameData.varCash
 }
 
@@ -46,7 +46,7 @@ function clownPurchase(clownType) {
   if (clownType == "comedy") {
     if (gameData.varCash >= gameData.comedyCost) {
       gameData.varCash -= gameData.comedyCost
-      gameData.perPerform += 0.5
+      gameData.perPerform = gameData.perPerform + 0.5
       gameData.comedyCost *= 1.1
       gameData.comedyCost = (gameData.comedyCost).toFixed(2)
       gameData.varCash = (gameData.varCash).toFixed(2)
