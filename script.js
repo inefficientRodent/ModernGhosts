@@ -48,9 +48,7 @@ function clownPurchase(clownType) {
       gameData.varCash -= gameData.comedyCost
       gameData.perPerform = gameData.perPerform + 0.5
       gameData.comedyCost *= 1.1
-      gameData.comedyCost = (gameData.comedyCost).toFixed(2)
-      gameData.varCash = (gameData.varCash).toFixed(2)
-      document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
+      document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
     }
   }
   if (clownType == "juggling") {
@@ -80,7 +78,7 @@ function clownPurchase(clownType) {
     //MORE WILL FOLLOW i just got lazy and this is a prototype :)
   
   //Updating the current cash after spending!
-  document.getElementById("currentCash").innerHTML = "You currently have: $" + gameData.varCash
+  document.getElementById("currentCash").innerHTML = "You currently have: $" + ((gameData.varCash).toFixed(2))
 }
 
 function upgradePurchase(upgradeType) {
