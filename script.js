@@ -1,4 +1,4 @@
-var savegame = JSON.parse(localStorage.getItem("goldMinerSave"))
+var savegame = JSON.parse(localStorage.getItem("ClownCircus"))
 if (savegame !== null) {
   gameData = savegame
 }
@@ -28,12 +28,12 @@ var gameData = {
   motelCost:0,
   
   varClowndo:0,
-  clowndoCost: 0,
+  clowndoCost: 0
 }
 
-
-
-
+function debugPrintGameData() {
+  print(gameData)
+}
 
 function perform() {
   gameData.varCash += gameData.perPerform
@@ -75,7 +75,6 @@ function clownPurchase(clownType) {
     //MORE WILL FOLLOW i just got lazy and this is a prototype :)
 }
 
-  
 function upgradePurchase(upgradeType) {
   
 }
