@@ -43,7 +43,7 @@ function perform() {
 //Purchasing function, pass in clownType as selection via button click function storePurchase(var)
 //Potential to make this do x10, x100 at later date? Pass in two variables - clownType and amount ???
 function clownPurchase(clownType) {
-  if (clownType = "comedy") {
+  if (clownType == "comedy") {
     if (gameData.varCash >= gameData.comedyCost) {
       gameData.varCash -= gameData.comedyCost
       gameData.perPerform += 0.5
@@ -51,21 +51,21 @@ function clownPurchase(clownType) {
       document.getElementById("comedyCost").innerHTML = "Current cost is: $" + gameData.comedyCost
     }
   }
-  if (clownType = "juggling") {
+  if (clownType == "juggling") {
     if (gameData.varCash >= gameData.jugglingCost) {
       gameData.varCash -= gameData.jugglingCost
       gameData.varPassiveIncome += 0.15
       gameData.jugglingCost *= 1.09
     }
   }
-  if (clownType = "balancing") {
+  if (clownType == "balancing") {
     if (gameData.varCash >= gameData.balancingCost) {
       gameData.varCash -= gameData.balancingCost
       gameData.varPassiveIncome += 00
       gameData.balancingCost *= 00
     }
   }
-  if (clownType = "animal") {
+  if (clownType == "animal") {
     if (gameData.varCash >= gameData.animalCost) {
       gameData.varCash -= gameData.animalCost
       gameData.varPassiveIncome += 00
@@ -80,27 +80,27 @@ function upgradePurchase(upgradeType) {
 }
   
 function buildingPurchase(buildType) {
-  if (buildType = "") {
+  if (buildType == "") {
     
   }
   
-  if (buildType = "") {
+  if (buildType == "") {
     
   }
   
-  if (buildType = "") {
+  if (buildType == "") {
     
   }
   
-  if (buildType = "") {
+  if (buildType == "") {
     
   }
   
-  if (buildType = "") {
+  if (buildType == "") {
     
   }
   
-  if (buildType = "") {
+  if (buildType == "") {
     
   }
 }
