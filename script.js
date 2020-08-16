@@ -5,9 +5,9 @@ if (savegame !== null) {
 
 var gameData = {
   //basic variables
-  varCash: 0,
-  perPerform: 1,
-  varPassiveIncome: 0,
+  varCash: 0.00,
+  perPerform: 1.0,
+  varPassiveIncome: 0.0,
   varFear: 0,
   varContempt: 0,
   varClownLimit:0,
@@ -119,7 +119,9 @@ var mainGameLoop = window.setInterval(function() {
   document.getElementById("currentCash").innerHTML = "You currently have: $" + gameData.varCash
   
   //For later use - adds varPassiveIncome to varCash every second
-  gameData.varCash += gameData.varPassiveIncome
+  if (gameData.varPassiveIncome > 0) {
+    gameData.varCash = gameData.varCash + gameData.varPassiveIncome
+  }
 }, 1000)
 
 //Per 15 seconds
