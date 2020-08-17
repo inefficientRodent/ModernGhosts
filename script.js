@@ -10,7 +10,7 @@ var gameData = {
   varPassiveIncome: 0.0,
   varFear: 0.0,
   varContempt: 0.0,
-  varClownLimit:0,
+  varClimit:0,
   
   //Clown Purchase Variables
   comedyCost: 20,
@@ -35,9 +35,13 @@ function debugLodesMone(money) {
   gameData.varCash = money
 }
 
+function saveGame() {
+  localStorage.setItem("ClownCircus", JSON.stringify(gameData))
+}
+
 function perform() {
   gameData.varCash = gameData.varCash + gameData.perPerform
-  document.getElementById("currentCash").innerHTML = "You currently have: $" + ((gameData.varCash).toFixed(2))
+  document.getElementById("currentCash").innerHTML = "Current Cash: $" + ((gameData.varCash).toFixed(2))
 }
 
 //Purchasing function, pass in clownType as selection via button click function storePurchase(var)
@@ -75,10 +79,10 @@ function clownPurchase(clownType) {
       gameData.animalCost *=00
     }
   }
-    //MORE WILL FOLLOW i just got lazy and this is a prototype :)
+  //MORE WILL FOLLOW i just got lazy and this is a prototype :)
   
   //Updating the current cash after spending!
-  document.getElementById("currentCash").innerHTML = "You currently have: $" + ((gameData.varCash).toFixed(2))
+  document.getElementById("currentCash").innerHTML = "Current Cash: $" + ((gameData.varCash).toFixed(2))
 }
 
 function upgradePurchase(upgradeType) {
@@ -113,8 +117,14 @@ function buildingPurchase(buildType) {
 
 //Per second
 var mainGameLoop = window.setInterval(function() {
+  //Updating store costs every second, possibly a better way to do this? 
   document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
-  document.getElementById("currentCash").innerHTML = "You currently have: $" + ((gameData.varCash).toFixed(2))
+  
+  //Updating player's stats
+  document.getElementById("currentCash").innerHTML = "Current Cash: $" + ((gameData.varCash).toFixed(2))
+  document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + ((gameData.varContempt).toFixed(2))
+  document.getElementById("currentFear").innerHTML = "Audience Fear: " + ((gameData.varFear).toFixed(2))
+  document.getElementById("currentClimit").innerHTML = "Clown Limit: " + ((gameData.varClimit).toFixed(2))
   
   //For later use - adds varPassiveIncome to varCash every second
   if (gameData.varPassiveIncome > 0) {
