@@ -39,6 +39,18 @@ function saveGame() {
   localStorage.setItem("ClownCircus", JSON.stringify(gameData))
 }
 
+function showDelete() {
+  document.getElementById("showDelete").style.visibility= 'visible'
+}
+function closeDelete() {
+  document.getElementById("showDelete").style.visibility = 'hidden'
+}
+
+function permDelete() {
+  localStorage.clear()
+  document.getElementById("showDelete").style.visibility = 'hidden'
+}
+
 function perform() {
   gameData.varCash = gameData.varCash + gameData.perPerform
   document.getElementById("currentCash").innerHTML = "Current Cash: $" + ((gameData.varCash).toFixed(2))
