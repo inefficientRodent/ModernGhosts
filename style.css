@@ -3,7 +3,7 @@
   left:0px;
   width:350px;
   height:800px;
-  background-color:red;
+  background-color:#a70000;
 }
 
 .right {
@@ -11,7 +11,7 @@
   right:0px;
   width:350px;
   height:800px;
-  background-color:blue;
+  background-color:#5b63c5;
 }
 
 .panel {
