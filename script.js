@@ -41,14 +41,27 @@ function saveGame() {
 
 function showDelete() {
   document.getElementById("showDelete").style.visibility= 'visible'
+  document.getElementById("showDeleteNevermind").style.visibility = 'visible'
 }
 function closeDelete() {
   document.getElementById("showDelete").style.visibility = 'hidden'
+  document.getElementById("showDeleteNevermind").style.visibility = 'hidden'
 }
 
 function permDelete() {
   localStorage.clear()
   document.getElementById("showDelete").style.visibility = 'hidden'
+  document.getElementById("showDeleteNevermind").style.visibility = 'hidden'
+  
+  //This is to Reset the webpage when you delete your save to prevent confusion
+  //Updating store costs
+  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
+  
+  //Updating player's stats
+  document.getElementById("currentCash").innerHTML = "Current Cash: $" + ((gameData.varCash).toFixed(2))
+  document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + ((gameData.varContempt).toFixed(2))
+  document.getElementById("currentFear").innerHTML = "Audience Fear: " + ((gameData.varFear).toFixed(2))
+  document.getElementById("currentClimit").innerHTML = "Clown Limit: " + ((gameData.varClimit).toFixed(2))
 }
 
 function perform() {
@@ -129,6 +142,8 @@ function buildingPurchase(buildType) {
 
 //Per second
 var mainGameLoop = window.setInterval(function() {
+  //When updating these, ensure the same changes are done to the Delete command
+  
   //Updating store costs every second, possibly a better way to do this? 
   document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
   
