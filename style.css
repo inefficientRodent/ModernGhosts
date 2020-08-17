@@ -1,3 +1,22 @@
+.topBanner {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	border-bottom: 1px dotted black;
+	min-width:1180px;
+	height:15px;
+}
+
+.optionButtons {
+	color:grey;
+	text-decoration:underline;
+	font-size: 12px;
+}
+.delete {
+	color:red;
+}
+
 .left {
   top:0px;
   left:0px;
