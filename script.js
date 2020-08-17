@@ -1,8 +1,3 @@
-var savegame = JSON.parse(localStorage.getItem("ClownCircus"))
-if (savegame !== null) {
-  gameData = savegame
-}
-
 var gameData = {
   //basic variables
   varCash: 0.00,
@@ -29,6 +24,11 @@ var gameData = {
   
   varClowndo:0,
   clowndoCost: 0
+}
+//This should load the game properly now
+var savegame = JSON.parse(localStorage.getItem("ClownCircus"))
+if (savegame !== null) {
+  gameData = savegame
 }
 
 function debugLodesMone(money) {
