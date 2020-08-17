@@ -36,10 +36,14 @@
     <text id="currentContempt" class="playerStat">Clown Contempt: ###</text>
     <text id="currentFear" class="playerStat">Audience Fear: ###</text>
     <text id="currentClimit" class="playerStat">Clown Limit: ###</text>
-    <br><br>
+    <p>
     <button onclick="perform()" class="playerButtons">Perform!</button>
     
+    <p>
     <button onclick="saveGame()">Save Game</button>
+    <button onclick="showDelete()" style="font:red">Delete Save</button>
+      <button onclick="permDelete()" style="visibility:hidden" id="showDelete">REALLY really delete</button>
+      <button onclick="closeDelete()" style="visibility:hidden" id="showDelete">Nevermind</button>
   </div>
   
 <script src="script.js"></script> 
