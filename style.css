@@ -73,3 +73,10 @@
 	font-weight:bold;
 	padding:10px 10px;
 }
+
+.playerStat {
+	width:400px;
+	height:20px;
+	background-color:#107e20;
+	border: 1px solid black;
+}
