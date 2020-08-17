@@ -6,10 +6,11 @@
 	border-bottom: 1px dotted black;
 	min-width:1180px;
 	height:15px;
+	color:grey;
 }
 
 .optionButtons {
-	color:grey;
+	color:white;
 	text-decoration:underline;
 	font-size: 12px;
 }
