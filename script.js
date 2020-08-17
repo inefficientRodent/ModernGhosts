@@ -49,7 +49,7 @@ function closeDelete() {
 }
 
 function permDelete() {
-  localStorage.clear()
+  localStorage.clear("ClownCircus")
   document.getElementById("showDelete").style.visibility = 'hidden'
   document.getElementById("showDeleteNevermind").style.visibility = 'hidden'
   
