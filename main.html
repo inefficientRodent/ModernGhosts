@@ -32,9 +32,14 @@
   </div>
   
   <div class="bottom-panel panel">
-    <h1 id="currentCash">You currently have: $###</h1>
-    <br>
+    <text id="currentCash" class="playerStat">Current Cash: $0</text>
+    <text id="currentContempt" class="playerStat">Clown Contempt: ###</text>
+    <text id="currentFear" class="playerStat">Audience Fear: ###</text>
+    <text id="currentClimit" class="playerStat">Clown Limit: ###</text>
+    <br><br>
     <button onclick="perform()" class="playerButtons">Perform!</button>
+    
+    <button onclick="saveGame()">Save Game</button>
   </div>
   
 <script src="script.js"></script> 
