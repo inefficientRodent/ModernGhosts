@@ -8,7 +8,14 @@
 <body>
 <!--Testing out fixed position panels ok_hand emoji :)-->
   
-  
+   <!--Banner for saving, deleting save, etc-->
+   <div class="topBanner">
+    <href onclick="saveGame()" class="optionButtons">Save Game</button> \
+    <href onclick="showDelete()" class="optionButtons delete">Delete Save</button> /
+    <href onclick="permDelete()" style="visibility:hidden" id="showDelete" class="optionButtons">REALLY really delete</button> \
+    <href onclick="closeDelete()" style="visibility:hidden" id="showDeleteNevermind" class="optionButtons">Cancel</button> /
+  </div> 
+    
   
   <div class="centre panel">
     Placeholder Text
@@ -43,14 +50,7 @@
     </p>
     
     
-    <!--Banner for saving, deleting save, etc-->
-   <div class="topBanner">
-    <href onclick="saveGame()" class="optionButtons">Save Game</button> \
-    <href onclick="showDelete()" class="optionButtons delete">Delete Save</button> /
-    <href onclick="permDelete()" style="visibility:hidden" id="showDelete" class="optionButtons">REALLY really delete</button> \
-    <href onclick="closeDelete()" style="visibility:hidden" id="showDeleteNevermind" class="optionButtons">Cancel</button> /
-  </div> 
-    
+   
    
   </div>
   
