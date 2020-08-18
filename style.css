@@ -24,6 +24,9 @@
   width:350px;
   height:800px;
   background-color:#a70000;
+	overflow-y: scroll;
+	scrollbar-width:thin;
+	scrollbar-color:#bd0b0b #820000;
 }
 
 .right {
@@ -32,6 +35,9 @@
   width:350px;
   height:800px;
   background-color:#5b63c5;
+	overflow-y: scroll;
+	scrollbar-width:thin;
+	scrollbar-color:#3440c9 #2c3496
 }
 
 .panel {
