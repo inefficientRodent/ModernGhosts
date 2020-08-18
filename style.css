@@ -86,20 +86,6 @@
 	top:1px;
 }
 
-.buildbutton {
-	background:#7a98ec;
-	border-radius:90px;
-	color:#FFFFFF;
-	font-size:17px;
-	font-weight:bold;
-	padding:10px 10px;
-}
-
-.buildbutton:active {
-	position:relative;
-	top:1px;
-}
-
 .storeOption {
 	border: 1px solid black;
 	background-color: #bd0101;
@@ -109,6 +95,15 @@
 	top:1px;
 	width:330px;
 	position:absolute;
+}
+
+.storeDescription {
+	font-size:15px;
+}
+
+.storeFlavour {
+	font-size:12px;
+	float:right;
 }
 
 .playerButtons {
