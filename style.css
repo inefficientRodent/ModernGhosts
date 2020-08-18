@@ -97,6 +97,20 @@
 	position:absolute;
 }
 
+.buildbutton {
+	background:#7a98ec;
+	border-radius:90px;
+	color:#FFFFFF;
+	font-size:17px;
+	font-weight:bold;
+	padding:10px 10px;
+}
+
+.buildbutton:active {
+	position:relative;
+	top:1px;
+}
+
 .storeDescription {
 	font-size:15px;
 }
