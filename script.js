@@ -63,6 +63,7 @@ function updateHTML() {
 function loadGame() {
   updateHTML()
   document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
+  document.getElementById("tentCost").innerHTML = "Current cost is: " + (gameData.tentCost).toFixed(2)
 }
 
 
@@ -147,7 +148,7 @@ function buildingPurchase(buildType) {
       gameData.varCash -= gameData.tentCost
       gameData.varClimit += 1
       gameData.tentCost *= 1.8
-      document.getElementById("tentCost").innerHTML = "Current cost is: " + (gameData.tentCost)
+      document.getElementById("tentCost").innerHTML = "Current cost is: " + (gameData.tentCost).toFixed(2)
     }
   }
   
