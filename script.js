@@ -89,6 +89,9 @@ function permDelete() {
   //This is to Reset the webpage when you delete your save to prevent confusion
   //Updating store costs
   document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
+  document.getElementById("tentCost").innerHTML = "Current cost is: $" + (gameData.tentCost).toFixed(2)
+  document.getElementById("vanCost").innerHTML = "Current cost is: $" + (gameData.vanCost).toFixed(2)
+  
   
   updateHTML()
 }
@@ -158,7 +161,7 @@ function buildingPurchase(buildType) {
   if (buildType == "van") {
     if (gameData.varCash >= gameData.vanCost) {
       gameData.varCash -= gameData.tentCost
-      gameData.varClimit += 1
+      gameData.varClimit += 2
       gameData.vanCost *= 1.75
       document.getElementById("vanCost").innerHTML = "Current cost is: $" + (gameData.vanCost).toFixed(2)
     }
