@@ -69,16 +69,25 @@ function shortenVal(val) {
   }
   
   if ((val >= 1000) && (val < 1000000)) {
-    (valReturn = val / 1000)
-    valReturn = (valReturn.toFixed(2)) + "K"
+    valReturn = ((val / 1000).toFixed(2)) + "K"
   }
   if ((val >= 1000000) && (val < 1000000000)) {
-    (valReturn = val / 1000000)
-    valReturn = (valReturn.toFixed(2)) + "M"
+    valReturn = ((val / 1000000).toFixed(2)) + "M"
   }
   if ((val >= 1000000000) && (val < 1000000000000)) {
-    (valReturn = val / 1000000000)
-    valReturn = (valReturn.toFixed(2)) + "B"
+    valReturn = ((val / 1000000000).toFixed(2)) + "B"
+  }
+  if ((val >= 1000000000000) && (val  < 1000000000000000)) {
+    valReturn = ((val / 1000000000000).toFixed(2)) + "T"
+  }
+  if ((val >= 1000000000000000) && (val < 1000000000000000000)) {
+    valReturn = ((val / 1000000000000000).toFixed(2)) + "Q"
+  }
+  if ((val >= 1000000000000000000) && (val < 1000000000000000000000)) {
+    valReturn=((val / 1000000000000000000).toFixed(2)) + "Qu"
+  }
+  if ((val >= 1000000000000000000000) && (val < 1000000000000000000000)) {
+    valReturn=((val / 1000000000000000000000).toFixed(2)) + "S"
   }
   return valReturn
 }
