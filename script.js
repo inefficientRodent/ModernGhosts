@@ -48,7 +48,7 @@ function updateHTML() {
   
   if (gameData.varContempt >= 0){
     document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + ((gameData.varContempt).toFixed(2))
-    document.getElementById("currentContempt").style.color = "white";
+    document.getElementById("currentContempt").style.color = "black";
     if (gameData.varContempt >= 90) {
       document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + ((gameData.varContempt).toFixed(2))
       document.getElementById("currentContempt").style.color = "red";
@@ -60,6 +60,12 @@ function updateHTML() {
   
   document.getElementById("currentClimit").innerHTML = "Clowns: " + (gameData.varClowns) + "/" + (gameData.varClimit) 
   
+}
+
+//Onload function to properly load all elements
+function loadGame() {
+  updateHTML()
+  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
 }
 
 
