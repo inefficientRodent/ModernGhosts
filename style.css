@@ -67,10 +67,10 @@
 }
 
 .storeImage {
-  position: sticky;
+  position: relative;
   height:25px;
   width:25px;
-  top: 15px;
+  top: 5px;
 }
 
 .clownbutton {
