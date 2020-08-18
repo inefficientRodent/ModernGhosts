@@ -14,6 +14,7 @@
 	text-decoration:underline;
 	font-size: 12px;
 }
+
 .delete {
 	color:red;
 }
@@ -68,8 +69,8 @@
 
 .storeImage {
   position: relative;
-  height:25px;
-  width:25px;
+  height:50px;
+  width:50px;
   top: 5px;
 }
 
@@ -203,6 +204,10 @@ topBubbles {  0% {
 .buildbutton:active {
 	position:relative;
 	top:1px;
+}
+
+.upgradebutton {
+	width:40px
 }
 
 .storeDescription {
