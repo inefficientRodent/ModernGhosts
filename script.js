@@ -187,7 +187,26 @@ var updateLoop = window.setInterval(function() {
   updateHTML()
 }, 12)
 
+var animateButton = function(e) {
+
+  e.preventDefault;
+  //reset animation
+  e.target.classList.remove('animate');
+
+  e.target.classList.add('animate');
+  setTimeout(function(){
+    e.target.classList.remove('animate');
+  },700);
+};
+
+var classname = document.getElementsByClassName("playerButtons");
+
+for (var i = 0; i < classname.length; i++) {
+  classname[i].addEventListener('click', animateButton, false);
+}
+
 //Debug commands go down below everything
 function debugLodesMone(money) {
   gameData.varCash = money
 }
+
