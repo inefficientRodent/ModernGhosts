@@ -15,7 +15,7 @@ var gameData = {
   animalCost: 750,
   stuntCost: 1500,
   pretzelCost: 3000,
-  dangerousCost: 
+  dangerousCost: 9000,
   
   //Building amounts
   tentCost: 10,
