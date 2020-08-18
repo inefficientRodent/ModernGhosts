@@ -6,6 +6,7 @@ var gameData = {
   varFear: 0.0,
   varContempt: 0.0,
   varClimit:0,
+  varClowns:0,
   
   //Clown Purchase Variables
   comedyCost: 20,
@@ -31,9 +32,36 @@ if (savegame !== null) {
   gameData = savegame
 }
 
-function debugLodesMone(money) {
-  gameData.varCash = money
+function updateHTML() {
+  if (gameData.varCash >= 0) {
+    document.getElementById("currentCash").innerHTML = "Current Cash: $" + ((gameData.varCash).toFixed(2))
+    if (gameData.varCash >= 1000) {
+      document.getElementById("currentCash").innerHTML = "Current Cash: $" + (((gameData.varCash) / 1000).toFixed(2)) + "K"
+      if (gameData.varCash >= 1000000) {
+        document.getElementById("currentCash").innerHTML = "Current Cash: $" + (((gameData.varCash) / 1000000).toFixed(2)) + "M"
+        if (gameData.varCash >= 1000000000) {
+          document.getElementById("currentCash").innerHTML = "Current Cash: $" + (((gameData.varCash) / 1000000000).toFixed(2)) + "B" 
+        }
+      }
+    }
+  }
+  
+  if (gameData.varContempt >= 0){
+    document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + ((gameData.varContempt).toFixed(2))
+    document.getElementById("currentContempt").style.color = "white";
+    if (gameData.varContempt >= 90) {
+      document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + ((gameData.varContempt).toFixed(2))
+      document.getElementById("currentContempt").style.color = "red";
+    }
+  }
+  
+  
+  document.getElementById("currentFear").innerHTML = "Audience Fear: " + ((gameData.varFear).toFixed(2))
+  
+  document.getElementById("currentClimit").innerHTML = "Clowns: " + (gameData.varClowns) + "/" + (gameData.varClimit) 
+  
 }
+
 
 function saveGame() {
   localStorage.setItem("ClownCircus", JSON.stringify(gameData))
@@ -57,16 +85,13 @@ function permDelete() {
   //Updating store costs
   document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
   
-  //Updating player's stats
-  document.getElementById("currentCash").innerHTML = "Current Cash: $" + ((gameData.varCash).toFixed(2))
-  document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + ((gameData.varContempt).toFixed(2))
-  document.getElementById("currentFear").innerHTML = "Audience Fear: " + ((gameData.varFear).toFixed(2))
-  document.getElementById("currentClimit").innerHTML = "Clown Limit: " + ((gameData.varClimit).toFixed(2))
+  updateHTML()
 }
+
+
 
 function perform() {
   gameData.varCash = gameData.varCash + gameData.perPerform
-  document.getElementById("currentCash").innerHTML = "Current Cash: $" + ((gameData.varCash).toFixed(2))
 }
 
 //Purchasing function, pass in clownType as selection via button click function storePurchase(var)
@@ -107,7 +132,6 @@ function clownPurchase(clownType) {
   //MORE WILL FOLLOW i just got lazy and this is a prototype :)
   
   //Updating the current cash after spending!
-  document.getElementById("currentCash").innerHTML = "Current Cash: $" + ((gameData.varCash).toFixed(2))
 }
 
 function upgradePurchase(upgradeType) {
@@ -142,24 +166,25 @@ function buildingPurchase(buildType) {
 
 //Per second
 var mainGameLoop = window.setInterval(function() {
-  //When updating these, ensure the same changes are done to the Delete command
-  
-  //Updating store costs every second, possibly a better way to do this? 
-  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
-  
-  //Updating player's stats
-  document.getElementById("currentCash").innerHTML = "Current Cash: $" + ((gameData.varCash).toFixed(2))
-  document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + ((gameData.varContempt).toFixed(2))
-  document.getElementById("currentFear").innerHTML = "Audience Fear: " + ((gameData.varFear).toFixed(2))
-  document.getElementById("currentClimit").innerHTML = "Clown Limit: " + ((gameData.varClimit).toFixed(2))
-  
   //For later use - adds varPassiveIncome to varCash every second
   if (gameData.varPassiveIncome > 0) {
     gameData.varCash = gameData.varCash + gameData.varPassiveIncome
   }
+  
+  
 }, 1000)
 
 //Per 15 seconds
 var saveGameLoop = window.setInterval(function() {
   localStorage.setItem("ClownCircus", JSON.stringify(gameData))
 }, 15000)
+
+//Per tick (12ms)
+var updateLoop = window.setInterval(function() {
+  updateHTML()
+}, 12)
+
+//Debug commands go down below everything
+function debugLodesMone(money) {
+  gameData.varCash = money
+}
