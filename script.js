@@ -56,11 +56,11 @@ function loadGame() {
   document.getElementById("vanCost").innerHTML = "Current cost is: $" + shortenVal(gameData.vanCost)
 }
 
-//
-//
-// Function for rounding values to K, M, B, ETC
-//
-//
+/*
+ Function for rounding values to K, M, B, ETC
+ This is possibly the dumbest way to do this 
+ But it works, it's so stupid though, christ.
+*/
 function shortenVal(val) {
   valReturn = 0.0
   if ((val >= 0) && (val < 1000)) {
@@ -69,25 +69,37 @@ function shortenVal(val) {
   }
   
   if ((val >= 1000) && (val < 1000000)) {
-    valReturn = ((val / 1000).toFixed(2)) + "K"
+    valReturn =((val/1000).toFixed(2)) + "Ki"
   }
   if ((val >= 1000000) && (val < 1000000000)) {
-    valReturn = ((val / 1000000).toFixed(2)) + "M"
+    valReturn =((val/1000000).toFixed(2)) + "Mi"
   }
   if ((val >= 1000000000) && (val < 1000000000000)) {
-    valReturn = ((val / 1000000000).toFixed(2)) + "B"
+    valReturn =((val/1000000000).toFixed(2)) + "Bi"
   }
   if ((val >= 1000000000000) && (val  < 1000000000000000)) {
-    valReturn = ((val / 1000000000000).toFixed(2)) + "T"
+    valReturn =((val/1000000000000).toFixed(2)) + "Tr"
   }
   if ((val >= 1000000000000000) && (val < 1000000000000000000)) {
-    valReturn = ((val / 1000000000000000).toFixed(2)) + "Q"
+    valReturn =((val/1000000000000000).toFixed(2)) + "Qa"
   }
   if ((val >= 1000000000000000000) && (val < 1000000000000000000000)) {
-    valReturn=((val / 1000000000000000000).toFixed(2)) + "Qu"
+    valReturn=((val/1000000000000000000).toFixed(2)) + "Qu"
   }
-  if ((val >= 1000000000000000000000) && (val < 1000000000000000000000)) {
-    valReturn=((val / 1000000000000000000000).toFixed(2)) + "S"
+  if ((val >= 1000000000000000000000) && (val < 1000000000000000000000000)) {
+    valReturn=((val/1000000000000000000000).toFixed(2)) + "Sx"
+  }
+  if ((val >= 1000000000000000000000000) && (val < 1000000000000000000000000000)) {
+    valReturn=((val/1000000000000000000000000).toFixed(2)) + "Sp"
+  }
+  if ((val >= 1000000000000000000000000000) && (val < 1000000000000000000000000000000)) {
+    valReturn=((val/1000000000000000000000000000).toFixed(2)) + "Oc"
+  }
+  if ((val >= 1000000000000000000000000000000) && (val < 1000000000000000000000000000000000)) {
+    valReturn=((val/1000000000000000000000000000000).toFixed(2)) + "Ni"
+  }
+  if ((val >= 1000000000000000000000000000000000) && (val < 1000000000000000000000000000000000000)) {
+    valReturn=((val/1000000000000000000000000000000000).toFixed(2)) + "De"
   }
   return valReturn
 }
