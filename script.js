@@ -1,6 +1,7 @@
 var gameData = {
   //basic variables
   varCash: 0.00,
+  varAllTimeCash: 0.00,
   perPerform: 1.0,
   varPassiveIncome: 0.0,
   varFear: 0.0,
@@ -19,7 +20,7 @@ var gameData = {
   
   //Building amounts
   tentCost: 10,
-  vanCost:0,
+  vanCost:50,
   motelCost:0, 
   clowndoCost: 0,
 }
@@ -54,7 +55,6 @@ function updateHTML() {
   
   
   document.getElementById("currentFear").innerHTML = "Audience Fear: " + ((gameData.varFear).toFixed(2))
-  
   document.getElementById("currentClimit").innerHTML = "Clowns: " + (gameData.varClowns) + "/" + (gameData.varClimit) 
   
 }
@@ -64,6 +64,7 @@ function loadGame() {
   updateHTML()
   document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
   document.getElementById("tentCost").innerHTML = "Current cost is: $" + (gameData.tentCost).toFixed(2)
+  document.getElementById("vanCost").innerHTML = "Current cost is: $" + (gameData.vanCost).toFixed(2)
 }
 
 
@@ -96,6 +97,7 @@ function permDelete() {
 
 function perform() {
   gameData.varCash = gameData.varCash + gameData.perPerform
+  gameData.varAllTimeCash += gameData.perPerform
 }
 
 //Purchasing function, pass in clownType as selection via button click function storePurchase(var)
@@ -106,7 +108,7 @@ function clownPurchase(clownType) {
       if (gameData.varCash >= gameData.comedyCost) {
         gameData.varCash -= gameData.comedyCost
         gameData.perPerform = gameData.perPerform + 0.25
-        gameData.comedyCost *= 1.1
+        gameData.comedyCost *= 1.4
         document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
       }
     }
@@ -114,7 +116,7 @@ function clownPurchase(clownType) {
       if (gameData.varCash >= gameData.jugglingCost) {
         gameData.varCash -= gameData.jugglingCost
         gameData.varPassiveIncome += 0.15
-        gameData.jugglingCost *= 1.09
+        gameData.jugglingCost *= 1.5
         gameData.jugglingCost = (gameData.jugglingCost).toFixed(2)
       //put document.getElementById for juggling et al down here
       }
@@ -123,7 +125,7 @@ function clownPurchase(clownType) {
       if (gameData.varCash >= gameData.balancingCost) {
         gameData.varCash -= gameData.balancingCost
         gameData.varPassiveIncome += 00
-        gameData.balancingCost *= 00
+        gameData.balancingCost *= 1.48
       }
     }
     if (clownType == "animal") {
@@ -153,8 +155,13 @@ function buildingPurchase(buildType) {
     }
   }
   
-  if (buildType == "") {
-    
+  if (buildType == "van") {
+    if (gameData.varCash >= gameData.vanCost) {
+      gameData.varCash -= gameData.tentCost
+      gameData.varClimit += 1
+      gameData.vanCost *= 1.75
+      document.getElementById("vanCost").innerHTML = "Current cost is: $" + (gameData.vanCost).toFixed(2)
+    }
   }
   
   if (buildType == "") {
@@ -178,7 +185,8 @@ function buildingPurchase(buildType) {
 var mainGameLoop = window.setInterval(function() {
   //For later use - adds varPassiveIncome to varCash every second
   if (gameData.varPassiveIncome > 0) {
-    gameData.varCash = gameData.varCash + gameData.varPassiveIncome
+    gameData.varCash += gameData.varPassiveIncome
+    gameData.varAllTimeCash += gameData.varPassiveIncome
   }
   
   
