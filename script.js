@@ -31,30 +31,19 @@ if (savegame !== null) {
 }
 
 function updateHTML() {
-  if (gameData.varCash >= 0) {
-    document.getElementById("currentCash").innerHTML = "Current Cash: $" + ((gameData.varCash).toFixed(2))
-    if (gameData.varCash >= 1000) {
-      document.getElementById("currentCash").innerHTML = "Current Cash: $" + (((gameData.varCash) / 1000).toFixed(2)) + "K"
-      if (gameData.varCash >= 1000000) {
-        document.getElementById("currentCash").innerHTML = "Current Cash: $" + (((gameData.varCash) / 1000000).toFixed(2)) + "M"
-        if (gameData.varCash >= 1000000000) {
-          document.getElementById("currentCash").innerHTML = "Current Cash: $" + (((gameData.varCash) / 1000000000).toFixed(2)) + "B" 
-        }
-      }
-    }
-  }
+  document.getElementById("currentCash").innerHTML = "Current Cash: $" + shortenVal(gameData.varCash)
   
   if (gameData.varContempt >= 0){
-    document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + ((gameData.varContempt).toFixed(2))
+    document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + shortenVal(gameData.varContempt)
     document.getElementById("currentContempt").style.color = "black";
     if (gameData.varContempt >= 90) {
-      document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + ((gameData.varContempt).toFixed(2))
+      document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + shortenVal(gameData.varContempt)
       document.getElementById("currentContempt").style.color = "red";
     }
   }
   
   
-  document.getElementById("currentFear").innerHTML = "Audience Fear: " + ((gameData.varFear).toFixed(2))
+  document.getElementById("currentFear").innerHTML = "Audience Fear: " + shortenVal(gameData.varFear)
   document.getElementById("currentClimit").innerHTML = "Clowns: " + (gameData.varClowns) + "/" + (gameData.varClimit) 
   
 }
@@ -62,11 +51,32 @@ function updateHTML() {
 //Onload function to properly load all elements
 function loadGame() {
   updateHTML()
-  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
-  document.getElementById("tentCost").innerHTML = "Current cost is: $" + (gameData.tentCost).toFixed(2)
-  document.getElementById("vanCost").innerHTML = "Current cost is: $" + (gameData.vanCost).toFixed(2)
+  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + shortenVal(gameData.comedyCost)
+  document.getElementById("tentCost").innerHTML = "Current cost is: $" + shortenVal(gameData.tentCost)
+  document.getElementById("vanCost").innerHTML = "Current cost is: $" + shortenVal(gameData.vanCost)
 }
 
+//
+//
+// Function for rounding values to K, M, B, ETC
+//
+//
+function shortenVal(val) {
+  valReturn = 0.0
+  if ((val >= 1000) && (val < 1000000)) {
+    (valReturn = val / 1000)
+    valReturn = (valReturn.toFixed(2)) + "K"
+  }
+  if ((val >= 1000000) && (val < 1000000000)) {
+    (valReturn = val / 1000000)
+    valReturn = (valReturn.toFixed(2)) + "M"
+  }
+  if ((val >= 1000000000) && (val < 1000000000000)) {
+    (valReturn = val / 1000000000)
+    valReturn = (valReturn.toFixed(2)) + "B"
+  }
+  return valReturn
+}
 
 function saveGame() {
   localStorage.setItem("ClownCircus", JSON.stringify(gameData))
@@ -88,9 +98,9 @@ function permDelete() {
   
   //This is to Reset the webpage when you delete your save to prevent confusion
   //Updating store costs
-  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
-  document.getElementById("tentCost").innerHTML = "Current cost is: $" + (gameData.tentCost).toFixed(2)
-  document.getElementById("vanCost").innerHTML = "Current cost is: $" + (gameData.vanCost).toFixed(2)
+  document.getElementById("comedyCost").innerHTML = "Current cost is: $" + shortenVal(gameData.comedyCost)
+  document.getElementById("tentCost").innerHTML = "Current cost is: $" + shortenVal(gameData.tentCost)
+  document.getElementById("vanCost").innerHTML = "Current cost is: $" + shortenVal(gameData.vanCost)
   
   
   updateHTML()
@@ -112,7 +122,7 @@ function clownPurchase(clownType) {
         gameData.varCash -= gameData.comedyCost
         gameData.perPerform = gameData.perPerform + 0.25
         gameData.comedyCost *= 1.4
-        document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
+        document.getElementById("comedyCost").innerHTML = "Current cost is: $" + shortenVal(gameData.comedyCost)
       }
     }
     if (clownType == "juggling") {
@@ -120,7 +130,7 @@ function clownPurchase(clownType) {
         gameData.varCash -= gameData.jugglingCost
         gameData.varPassiveIncome += 0.15
         gameData.jugglingCost *= 1.5
-        gameData.jugglingCost = (gameData.jugglingCost).toFixed(2)
+        gameData.jugglingCost = shortenVal(gameData.jugglingCost)
       //put document.getElementById for juggling et al down here
       }
     }
@@ -154,7 +164,7 @@ function buildingPurchase(buildType) {
       gameData.varCash -= gameData.tentCost
       gameData.varClimit += 1
       gameData.tentCost *= 1.8
-      document.getElementById("tentCost").innerHTML = "Current cost is: $" + (gameData.tentCost).toFixed(2)
+      document.getElementById("tentCost").innerHTML = "Current cost is: $" + shortenVal(gameData.tentCost)
     }
   }
   
@@ -163,7 +173,7 @@ function buildingPurchase(buildType) {
       gameData.varCash -= gameData.tentCost
       gameData.varClimit += 2
       gameData.vanCost *= 1.75
-      document.getElementById("vanCost").innerHTML = "Current cost is: $" + (gameData.vanCost).toFixed(2)
+      document.getElementById("vanCost").innerHTML = "Current cost is: $" + shortenVal(gameData.vanCost)
     }
   }
   
