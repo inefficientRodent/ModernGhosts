@@ -100,41 +100,41 @@ function perform() {
 //Purchasing function, pass in clownType as selection via button click function storePurchase(var)
 //Potential to make this do x10, x100 at later date? Pass in two variables - clownType and amount ???
 function clownPurchase(clownType) {
-  if (clownType == "comedy") {
-    if (gameData.varCash >= gameData.comedyCost) {
-      gameData.varCash -= gameData.comedyCost
-      gameData.perPerform = gameData.perPerform + 0.5
-      gameData.comedyCost *= 1.1
-      document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
+  if (gameData.varClowns < gameData.varClimit) {
+    if (clownType == "comedy") {
+      if (gameData.varCash >= gameData.comedyCost) {
+        gameData.varCash -= gameData.comedyCost
+        gameData.perPerform = gameData.perPerform + 0.25
+        gameData.comedyCost *= 1.1
+        document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
+      }
     }
-  }
-  if (clownType == "juggling") {
-    if (gameData.varCash >= gameData.jugglingCost) {
-      gameData.varCash -= gameData.jugglingCost
-      gameData.varPassiveIncome += 0.15
-      gameData.jugglingCost *= 1.09
-      gameData.jugglingCost = (gameData.jugglingCost).toFixed(2)
-      gameData.varCash = (gameData.varCash).toFixed(2)
+    if (clownType == "juggling") {
+      if (gameData.varCash >= gameData.jugglingCost) {
+        gameData.varCash -= gameData.jugglingCost
+        gameData.varPassiveIncome += 0.15
+        gameData.jugglingCost *= 1.09
+        gameData.jugglingCost = (gameData.jugglingCost).toFixed(2)
       //put document.getElementById for juggling et al down here
+      }
     }
-  }
-  if (clownType == "balancing") {
-    if (gameData.varCash >= gameData.balancingCost) {
-      gameData.varCash -= gameData.balancingCost
-      gameData.varPassiveIncome += 00
-      gameData.balancingCost *= 00
+    if (clownType == "balancing") {
+      if (gameData.varCash >= gameData.balancingCost) {
+        gameData.varCash -= gameData.balancingCost
+        gameData.varPassiveIncome += 00
+        gameData.balancingCost *= 00
+      }
     }
-  }
-  if (clownType == "animal") {
-    if (gameData.varCash >= gameData.animalCost) {
-      gameData.varCash -= gameData.animalCost
-      gameData.varPassiveIncome += 00
-      gameData.animalCost *=00
+    if (clownType == "animal") {
+      if (gameData.varCash >= gameData.animalCost) {
+        gameData.varCash -= gameData.animalCost
+        gameData.varPassiveIncome += 00
+        gameData.animalCost *=00
+      }
     }
-  }
   //MORE WILL FOLLOW i just got lazy and this is a prototype :)
+  }
   
-  //Updating the current cash after spending!
 }
 
 function upgradePurchase(upgradeType) {
@@ -142,8 +142,13 @@ function upgradePurchase(upgradeType) {
 }
   
 function buildingPurchase(buildType) {
-  if (buildType == "") {
-    
+  if (buildType == "tent") {
+    if (gameData.varCash >= gameData.tentCost) {
+      gameData.varCash -= gameData.tentCost
+      gameData.varClimit += 1
+      gameData.tentCost *= 1.8
+      document.getElementById("tentCost").innerHTML = "Current cost is: " + (gameData.tentCost)
+    }
   }
   
   if (buildType == "") {
