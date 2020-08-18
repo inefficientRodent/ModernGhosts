@@ -63,6 +63,11 @@ function loadGame() {
 //
 function shortenVal(val) {
   valReturn = 0.0
+  if ((val >= 0) && (val < 1000)) {
+    valReturn = val
+    return valReturn
+  }
+  
   if ((val >= 1000) && (val < 1000000)) {
     (valReturn = val / 1000)
     valReturn = (valReturn.toFixed(2)) + "K"
