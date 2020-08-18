@@ -63,7 +63,7 @@ function updateHTML() {
 function loadGame() {
   updateHTML()
   document.getElementById("comedyCost").innerHTML = "Current cost is: $" + (gameData.comedyCost).toFixed(2)
-  document.getElementById("tentCost").innerHTML = "Current cost is: " + (gameData.tentCost).toFixed(2)
+  document.getElementById("tentCost").innerHTML = "Current cost is: $" + (gameData.tentCost).toFixed(2)
 }
 
 
@@ -133,6 +133,7 @@ function clownPurchase(clownType) {
         gameData.animalCost *=00
       }
     }
+    gameData.varClowns += 1
   //MORE WILL FOLLOW i just got lazy and this is a prototype :)
   }
   
@@ -148,7 +149,7 @@ function buildingPurchase(buildType) {
       gameData.varCash -= gameData.tentCost
       gameData.varClimit += 1
       gameData.tentCost *= 1.8
-      document.getElementById("tentCost").innerHTML = "Current cost is: " + (gameData.tentCost).toFixed(2)
+      document.getElementById("tentCost").innerHTML = "Current cost is: $" + (gameData.tentCost).toFixed(2)
     }
   }
   
