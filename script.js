@@ -64,7 +64,7 @@ function loadGame() {
 function shortenVal(val) {
   valReturn = 0.0
   if ((val >= 0) && (val < 1000)) {
-    valReturn = val
+    valReturn = (val.toFixed(2))
     return valReturn
   }
   
