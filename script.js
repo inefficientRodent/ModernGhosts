@@ -22,7 +22,7 @@ var gameData = {
   jugglingMult: 1,
   balancingCost: 5000,
   balancingOwned:0,
-  jugglingMult: 1,
+  balancingMult: 1,
   animalCost: 25000,
   animalOwned:0,
   animalMult: 1,
