@@ -399,7 +399,7 @@ function buildingPurchase(buildType) {
 //Per second
 var mainGameLoop = window.setInterval(function() {
   //For later use - adds varPassiveIncome to varCash every second
-  gameData.varCash = (((gameData.jugglingOwned * 1) * gameData.jugglingMult) + ((gameData.balancingOwned * 5) * gameData.balancingMult)) + ((gameData.animalOwned * 20) * gameData.animalMult) + ((gameData.stuntOwned * 100) * gameData.stuntMult) + ((gameData.pretzelOwned * 200) * gameData.pretzelMult) + ((gameData.dangerousOwned * 500) * gameData.dangerousMult) + ((gameData.disgustingOwned * 1000) * gameData.disgustingMult) + ((gameData.townOwned * 20) * gameData.townMult))
+  gameData.varCash = (((gameData.jugglingOwned * 1) * gameData.jugglingMult) + ((gameData.balancingOwned * 5) * gameData.balancingMult) + ((gameData.animalOwned * 20) * gameData.animalMult) + ((gameData.stuntOwned * 100) * gameData.stuntMult) + ((gameData.pretzelOwned * 200) * gameData.pretzelMult) + ((gameData.dangerousOwned * 500) * gameData.dangerousMult) + ((gameData.disgustingOwned * 1000) * gameData.disgustingMult) + ((gameData.townOwned * 20) * gameData.townMult))
 }, 1000)
 
 //Per 15 seconds
