@@ -234,6 +234,7 @@ function clownPurchase(clownType) {
         gameData.varCash -= gameData.comedyCost
         gameData.perPerform = gameData.perPerform + 0.25
         gameData.comedyCost *= 1.4
+        gameData.comedyOwned += 1
       }
     }
     if (clownType == "juggling") {
