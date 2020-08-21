@@ -83,17 +83,17 @@ if (savegame !== null) {
 function updateHTML() {
   document.getElementById("currentCash").innerHTML = "Current Cash: $" + shortenVal(gameData.varCash)
   //handling contempt is fun. I think paired with the contempt it should decrease income by a fraction according to which rung you're in?
-  if (gameData.varContempt >= 0){
-    document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + shortenVal(gameData.varContempt) + "/" shortenVal(gameData.varContemptLimit)
+  if (gameData.varContempt >= 0) {
+    document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + shortenVal(gameData.varContempt) + "/" + shortenVal(gameData.varContemptLimit)
     document.getElementById("currentContempt").style.color = "black";
     if (gameData.varContempt >= (gameData.varContemptLimit * 0.75)) {
-      document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + shortenVal(gameData.varContempt) + "/" shortenVal(gameData.varContemptLimit)
+      document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + shortenVal(gameData.varContempt) + "/" + shortenVal(gameData.varContemptLimit)
       document.getElementById("currentContempt").style.color = "#bf0d00"
       if (gameData.varContempt >= (gameData.varContemptLimit * 0.9)) {
-        document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + shortenVal(gameData.varContempt) + "/" shortenVal(gameData.varContemptLimit)
+        document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + shortenVal(gameData.varContempt) + "/" + shortenVal(gameData.varContemptLimit)
         document.getElementById("currentContempt").style.color = "#e60f00"
         if (gameData.varContempt >= (gameData.varContemptLimit * 0.95)) {
-          document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + shortenVal(gameData.varContempt) + "/" shortenVal(gameData.varContemptLimit)
+          document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + shortenVal(gameData.varContempt) + "/" + shortenVal(gameData.varContemptLimit)
           document.getElementById("currentContempt").style.color = "#ff1100"
         }
       }
