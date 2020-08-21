@@ -44,25 +44,25 @@ var gameData = {
   tentOwned:0,
   vanCost:750,
   vanOwned:0,
-  motelCost:1000, 
+  motelCost:2500, 
   motelOwned:0,
-  clowndoCost: 0,
+  clowndoCost: 999999999,
   clowndoOwned:0,
-  hotelCost: 0,
+  hotelCost: 9999999999,
   hotelOwned: 0,
-  mansionCost: 0,
+  mansionCost: 99999999999,
   mansionOwned:0,
-  townCost: 0,
+  townCost: 999999999999,
   townOwned: 0,
   townMult: 1,
   countryCost: 0,
   countryOwned: 0,
-  spireCost: 0,
+  spireCost: 9999999999999,
   spireOwned: 0,
   //WE GROW
   //WE ASSIMILATE
   //WE HONK.
-  hiveCost: 0,
+  hiveCost: 999999999999999,
   varHiveLimit:0,
   hiveOwned: 0,
 }
@@ -95,6 +95,9 @@ function updateHTML() {
   document.getElementById("currentFear").innerHTML = "Audience Fear: " + shortenVal(gameData.varFear)
   
   document.getElementById("currentClimit").innerHTML = "Clowns: " + (gameData.varClowns) + "/" + (gameData.varClimit) 
+  if (gameData.varClowns < gameData.varClimit) {
+    document.getElementById("currentClimit").style.color = "black"
+  }
   if (gameData.varClowns == gameData.varClimit) {
     document.getElementById("currentClimit").style.color = "red"
   }
@@ -132,14 +135,12 @@ function updateCosts() {
   document.getElementById("mansionOwned").innerHTML = "Owned: " + shortenVal(gameData.mansionOwned)
   document.getElementById("townCost").innerHTML = "Current cost is: $" + shortenVal(gameData.townCost)
   document.getElementById("townOwned").innerHTML = "Owned: " + shortenVal(gameData.townOwned)
-  /*
   document.getElementById("countryCost").innerHTML = "Current cost is: $" + shortenVal(gameData.countryCost)
   document.getElementById("countryOwned").innerHTML = "Owned: " + shortenVal(gameData.countryOwned)
   document.getElementById("spireCost").innerHTML = "Current cost is: $" + shortenVal(gameData.spireCost)
   document.getElementById("spireOwned").innerHTML = "Owned: " + shortenVal(gameData.spireOwned)
   document.getElementById("hiveCost").innerHTML = "Current cost is: $" + shortenVal(gameData.hiveCost)
   document.getElementById("hiveOwned").innerHTML = "Owned: " + shortenVal(gameData.hiveOwned)
-  */
 }
 
 //Onload function to properly load all elements - ONLOAD FUNCTION
