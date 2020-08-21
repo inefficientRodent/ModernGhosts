@@ -17,31 +17,24 @@ var gameData = {
   comedyCost: 20,
   comedyOwned:0,
   comedyMult: 1,
-  
   jugglingCost: 800,
   jugglingOwned:0,
   jugglingMult: 1,
-  
   balancingCost: 5000,
   balancingOwned:0,
   jugglingMult: 1,
-  
   animalCost: 25000,
   animalOwned:0,
   animalMult: 1,
-  
   stuntCost: 500000,
   stuntOwned:0,
   stuntMult: 1,
-  
   pretzelCost: 1000000,
   pretzelOwned:0,
   pretzelMult: 1,
-  
   dangerousCost: 25000000,
   dangerousOwned:0,
   dangerousMult: 1,
-  
   disgustingCost: 1000000000,
   disgustingOwned:0,
   disgustingMult: 1,
@@ -401,7 +394,8 @@ function buildingPurchase(buildType) {
 //Per second
 var mainGameLoop = window.setInterval(function() {
   //For later use - adds varPassiveIncome to varCash every second
-  gameData.varCash = (((gameData.jugglingOwned * 1) * gameData.jugglingMult) + ((gameData.balancingOwned * 5) * gameData.balancingMult) + ((gameData.animalOwned * 20) * gameData.animalMult) + ((gameData.stuntOwned * 100) * gameData.stuntMult) + ((gameData.pretzelOwned * 200) * gameData.pretzelMult) + ((gameData.dangerousOwned * 500) * gameData.dangerousMult) + ((gameData.disgustingOwned * 1000) * gameData.disgustingMult) + ((gameData.townOwned * 20) * gameData.townMult))
+  gameData.varCash += (((gameData.jugglingOwned * 1) * gameData.jugglingMult) + ((gameData.balancingOwned * 5) * gameData.balancingMult) + ((gameData.animalOwned * 20) * gameData.animalMult) + ((gameData.stuntOwned * 100) * gameData.stuntMult) + ((gameData.pretzelOwned * 200) * gameData.pretzelMult) + ((gameData.dangerousOwned * 500) * gameData.dangerousMult) + ((gameData.disgustingOwned * 1000) * gameData.disgustingMult) + ((gameData.townOwned * 20) * gameData.townMult))
+  gameData.varAllTimeCash += (((gameData.jugglingOwned * 1) * gameData.jugglingMult) + ((gameData.balancingOwned * 5) * gameData.balancingMult) + ((gameData.animalOwned * 20) * gameData.animalMult) + ((gameData.stuntOwned * 100) * gameData.stuntMult) + ((gameData.pretzelOwned * 200) * gameData.pretzelMult) + ((gameData.dangerousOwned * 500) * gameData.dangerousMult) + ((gameData.disgustingOwned * 1000) * gameData.disgustingMult) + ((gameData.townOwned * 20) * gameData.townMult))
 }, 1000)
 
 //Per 15 seconds
