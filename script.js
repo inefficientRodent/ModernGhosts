@@ -94,11 +94,9 @@ function updateHTML() {
   }
   document.getElementById("currentFear").innerHTML = "Audience Fear: " + shortenVal(gameData.varFear)
   
-  if (gameData.varClowns < gameData.varClimit) {
-    document.getElementById("currentClimit").innerHTML = "Clowns: " + (gameData.varClowns) + "/" + (gameData.varClimit) 
-    if (gameData.varClowns == gameData.varClimit) {
-      document.getElementById("currentClimit").style.color = "red"
-    }
+  document.getElementById("currentClimit").innerHTML = "Clowns: " + (gameData.varClowns) + "/" + (gameData.varClimit) 
+  if (gameData.varClowns == gameData.varClimit) {
+    document.getElementById("currentClimit").style.color = "red"
   }
 }
 //This is for updating the costs of buildings and clowns - UPDATE CLOWNS AND BUILDINGS
