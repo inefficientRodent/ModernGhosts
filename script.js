@@ -141,12 +141,14 @@ function updateCosts() {
   document.getElementById("mansionOwned").innerHTML = "Owned: " + shortenVal(gameData.mansionOwned)
   document.getElementById("townCost").innerHTML = "Current cost is: $" + shortenVal(gameData.townCost)
   document.getElementById("townOwned").innerHTML = "Owned: " + shortenVal(gameData.townOwned)
+  /*
   document.getElementById("countryCost").innerHTML = "Current cost is: $" + shortenVal(gameData.countryCost)
   document.getElementById("countryOwned").innerHTML = "Owned: " + shortenVal(gameData.countryOwned)
   document.getElementById("spireCost").innerHTML = "Current cost is: $" + shortenVal(gameData.spireCost)
   document.getElementById("spireOwned").innerHTML = "Owned: " + shortenVal(gameData.spireOwned)
   document.getElementById("hiveCost").innerHTML = "Current cost is: $" + shortenVal(gameData.hiveCost)
   document.getElementById("hiveOwned").innerHTML = "Owned: " + shortenVal(gameData.hiveOwned)
+  */
 }
 
 //Onload function to properly load all elements - ONLOAD FUNCTION
