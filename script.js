@@ -250,7 +250,7 @@ function clownPurchase(clownType) {
       if (gameData.gameStats[0] >= gameData.clownDisgusting[0]) {
         gameData.gameStats[0] -= gameData.clownDisgusting[0]
         gameData.clownDisgusting[0] *= 1.39
-        gameData.clownDisgusting[0] += 1
+        gameData.clownDisgusting[1] += 1
         gameData.gameStats[6] += 1
       }
     }
