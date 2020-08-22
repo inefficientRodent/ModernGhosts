@@ -101,6 +101,7 @@
 	top:1px;
 	width:330px;
 	height:175px;
+	visibility:hidden;
 }
 
 .storeOptionRight {
@@ -112,6 +113,7 @@
 	top:1px;
 	width:330px;
 	height:175px;
+	visibility:hidden;
 }
 
 .playerButtons {
