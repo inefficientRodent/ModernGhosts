@@ -195,6 +195,7 @@ function clownPurchase(clownType) {
         gameData.gameStats[2] += 0.25
         gameData.clownComedy[0] *= 1.4
         gameData.clownComedy[1] += 1
+        gameData.gameStats[6] += 1
       }
     }
     if (clownType == "juggling") {
@@ -202,7 +203,7 @@ function clownPurchase(clownType) {
         gameData.gameStats[0] -= gameData.clownJuggling[0]
         gameData.clownJuggling[0] *= 1.5
         gameData.clownJuggling[1] += 1
-      //put document.getElementById for juggling et al down here
+        gameData.gameStats[6] += 1
       }
     }
     if (clownType == "balancing") {
@@ -210,6 +211,7 @@ function clownPurchase(clownType) {
         gameData.gameStats[0] -= gameData.clownBalancing[0]
         gameData.clownBalancing[0] *= 1.49
         gameData.clownBalancing[1] += 1
+        gameData.gameStats[6] += 1
       }
     }
     if (clownType == "animal") {
@@ -217,6 +219,7 @@ function clownPurchase(clownType) {
         gameData.gameStats[0] -= gameData.clownAnimal[0]
         gameData.clownAnimal[0] *= 1.47
         gameData.clownAnimal[1] += 1
+        gameData.gameStats[6] += 1
       }
     }
     if (clownType == "stunt") {
@@ -224,6 +227,7 @@ function clownPurchase(clownType) {
         gameData.gameStats[0] -= gameData.clownStunt[0]
         gameData.clownStunt[0] *= 1.45
         gameData.clownStunt[1] += 1
+        gameData.gameStats[6] += 1
       }
     }
     if (clownType == "pretzel") {
@@ -231,6 +235,7 @@ function clownPurchase(clownType) {
        gameData.gameStats[0] -= gameData.clownPretzel[0]
        gameData.clownPretzel[0] *= 1.43
        gameData.clownPretzel[1] += 1
+       gameData.gameStats[6] += 1
      }
     }
     if (clownType == "dangerous") {
@@ -238,6 +243,7 @@ function clownPurchase(clownType) {
         gameData.gameStats[0] -= gameData.clownDangerous[0]
         gameData.clownDangerous[0] *= 1.41
         gameData.clownDangerous[1] += 1
+        gameData.gameStats[6] += 1
       }
     }
     if (clownType == "disgusting") {
@@ -245,9 +251,9 @@ function clownPurchase(clownType) {
         gameData.gameStats[0] -= gameData.clownDisgusting[0]
         gameData.clownDisgusting[0] *= 1.39
         gameData.clownDisgusting[0] += 1
+        gameData.gameStats[6] += 1
       }
     }
-    gameData.gameStats[6] += 1
     updateCosts()
   //MORE WILL FOLLOW i just got lazy and this is a prototype :)
   }
@@ -350,8 +356,62 @@ function buildingPurchase(buildType) {
   updateCosts()
 }
 
+//Function to check if a store element should be available or not depending on ATC
+function checkAvailable() {
+  if (gameData.gameStats[0] >= (gameData.buildVan[0] * 0.75)) {
+    document.getElementById("vanStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.buildMotel[0] * 0.75)) {
+    document.getElementById("motelStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.buildClowndo[0] * 0.75)) {
+    document.getElementById("clowndoStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.buildHotel[0] * 0.75)) {
+    document.getElementById("hotelStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.buildMansion[0] * 0.75)) {
+    document.getElementById("mansionStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.buildTown[0] * 0.75)) {
+    document.getElementById("townStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.buildCountry[0] * 0.75)) {
+    document.getElementById("countryStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.buildSpire[0] * 0.75)) {
+    document.getElementById("spireStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.buildHive[0] * 0.75)) {
+    document.getElementById("hiveStore").style.visibility = 'visible'
+  }
+  
+  if (gameData.gameStats[0] >= (gameData.clownJuggling[0] * 0.75)) {
+    document.getElementById("jugglingStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[01] >= (gameData.clownBalancing[0] * 0.75)) {
+    document.getElementById("balancingStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.clownAnimal[0] * 0.75)) {
+    document.getElementById("animalStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.clownStunt[0] * 0.75)) {
+    document.getElementById("stuntStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.clownPretzel[0] * 0.75)) {
+    document.getElementById("pretzelStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.clownDangerous[0] * 0.75)) {
+    document.getElementById("dangerousStore").style.visibility = 'visible'
+  }
+  if (gameData.gameStats[0] >= (gameData.clownDisgusting[0] * 0.75)) {
+    document.getElementById("disgustingStore").style.visibility = 'visible'
+  }
+}
+
 //Per second
 var mainGameLoop = window.setInterval(function() {
+  checkAvailable()
   //For later use - adds varPassiveIncome to varCash every second
   gameData.gameStats[0] += (((gameData.clownJuggling[1] * 1) * gameData.clownJuggling[2]) + ((gameData.clownBalancing[1] * 5) * gameData.clownBalancing[2]) + ((gameData.clownAnimal[1] * 20) * gameData.clownAnimal[2]) + ((gameData.clownStunt[1] * 100) * gameData.clownStunt[2]) + ((gameData.clownPretzel[1] * 200) * gameData.clownPretzel[2]) + ((gameData.clownDangerous[1] * 500) * gameData.clownDangerous[2]) + ((gameData.clownDisgusting[1] * 1000) * gameData.clownDisgusting[2]) + ((gameData.buildTown[1] * 20) * gameData.buildTown[3]))
   gameData.gameStats[1] += (((gameData.clownJuggling[1] * 1) * gameData.clownJuggling[2]) + ((gameData.clownBalancing[1] * 5) * gameData.clownBalancing[2]) + ((gameData.clownAnimal[1] * 20) * gameData.clownAnimal[2]) + ((gameData.clownStunt[1] * 100) * gameData.clownStunt[2]) + ((gameData.clownPretzel[1] * 200) * gameData.clownPretzel[2]) + ((gameData.clownDangerous[1] * 500) * gameData.clownDangerous[2]) + ((gameData.clownDisgusting[1] * 1000) * gameData.clownDisgusting[2]) + ((gameData.buildTown[1] * 20) * gameData.buildTown[3]))
