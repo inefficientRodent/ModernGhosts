@@ -59,6 +59,15 @@ a {
 	background-image: url("Sandycus.png");
 }
 
+.center-panel {
+	top:2%;
+	left:20%;
+	position:absolute;
+	width:60%;
+	height:80%;
+	background-image: url(https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/placeholder2.png);
+}
+
 .gameStats {
 	position:relative;
 	width:30%;
