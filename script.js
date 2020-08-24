@@ -33,6 +33,12 @@ if (savegame !== null) {
   gameData = savegame
 }
 
+function swapStore(tab, tab2) {
+	document.getElementById(tab).style.display = 'block'
+	document.getElementById(tab2).style.display = 'none'
+	
+}
+
 //This is for updating the player's stats - UPDATE PLAYER STATS
 function updateHTML() {
   document.getElementById("currentCash").innerHTML = "$" + shortenVal(gameData.gameStats[0])
