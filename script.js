@@ -35,10 +35,10 @@ if (savegame !== null) {
 
 //This is for updating the player's stats - UPDATE PLAYER STATS
 function updateHTML() {
-  document.getElementById("currentCash").innerHTML = "Current Cash: $" + shortenVal(gameData.gameStats[0])
+  document.getElementById("currentCash").innerHTML = "$" + shortenVal(gameData.gameStats[0])
   //handling contempt is fun. I think paired with the contempt it should decrease income by a fraction according to which rung you're in?
   
-  document.getElementById("currentContempt").innerHTML = "Clown Contempt: " + shortenVal(gameData.gameStats[4]) + "/" + shortenVal(gameData.gameStats[5])
+  document.getElementById("currentContempt").innerHTML = shortenVal(gameData.gameStats[4]) + "/" + shortenVal(gameData.gameStats[5])
   if (gameData.gameStats[4] >= 0) {
     document.getElementById("currentContempt").style.color = "black";
     if (gameData.gameStats[4] >= (gameData.gameStats[5] * 0.75)) {
@@ -51,9 +51,9 @@ function updateHTML() {
       }
     }
   }
-  document.getElementById("currentFear").innerHTML = "Audience Fear: " + shortenVal(gameData.gameStats[3])
+  document.getElementById("currentFear").innerHTML = shortenVal(gameData.gameStats[3])
   
-  document.getElementById("currentClimit").innerHTML = "Clowns: " + (gameData.gameStats[6]) + "/" + (gameData.gameStats[7]) 
+  document.getElementById("currentClimit").innerHTML = (gameData.gameStats[6]) + "/" + (gameData.gameStats[7]) 
   if (gameData.gameStats[6] < gameData.gameStats[7]) {
     document.getElementById("currentClimit").style.color = "black"
   }
@@ -114,7 +114,10 @@ function loadGame() {
  But it works, it's so stupid though, christ.
 */
 function shortenVal(val) {
-  valReturn = 0.0
+  valReturn = 0
+  if (val == 0) {
+	return valReturn
+  }	  
   if ((val >= 0) && (val < 1000)) {
     valReturn = (val.toFixed(2))
     return valReturn
@@ -160,7 +163,7 @@ function saveGame() {
   localStorage.setItem("ClownCircus", JSON.stringify(gameData))
 }
 function showDelete() {
-  document.getElementById("showDelete").style.visibility= 'visible'
+  document.getElementById("showDelete").style.visibility = 'visible'
   document.getElementById("showDeleteNevermind").style.visibility = 'visible'
 }
 function closeDelete() {
@@ -359,53 +362,53 @@ function buildingPurchase(buildType) {
 //Function to check if a store element should be available or not depending on ATC
 function checkAvailable() {
   if (gameData.gameStats[0] >= (gameData.buildVan[0] * 0.75)) {
-    document.getElementById("vanStore").style.visibility = 'visible'
+    document.getElementById("vanStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.buildMotel[0] * 0.75)) {
-    document.getElementById("motelStore").style.visibility = 'visible'
+    document.getElementById("motelStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.buildClowndo[0] * 0.75)) {
-    document.getElementById("clowndoStore").style.visibility = 'visible'
+    document.getElementById("clowndoStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.buildHotel[0] * 0.75)) {
-    document.getElementById("hotelStore").style.visibility = 'visible'
+    document.getElementById("hotelStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.buildMansion[0] * 0.75)) {
-    document.getElementById("mansionStore").style.visibility = 'visible'
+    document.getElementById("mansionStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.buildTown[0] * 0.75)) {
-    document.getElementById("townStore").style.visibility = 'visible'
+    document.getElementById("townStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.buildCountry[0] * 0.75)) {
-    document.getElementById("countryStore").style.visibility = 'visible'
+    document.getElementById("countryStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.buildSpire[0] * 0.75)) {
-    document.getElementById("spireStore").style.visibility = 'visible'
+    document.getElementById("spireStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.buildHive[0] * 0.75)) {
-    document.getElementById("hiveStore").style.visibility = 'visible'
+    document.getElementById("hiveStore").style.display = 'block'
   }
   
   if (gameData.gameStats[0] >= (gameData.clownJuggling[0] * 0.75)) {
-    document.getElementById("jugglingStore").style.visibility = 'visible'
+    document.getElementById("jugglingStore").style.display = 'block'
   }
   if (gameData.gameStats[01] >= (gameData.clownBalancing[0] * 0.75)) {
-    document.getElementById("balancingStore").style.visibility = 'visible'
+    document.getElementById("balancingStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.clownAnimal[0] * 0.75)) {
-    document.getElementById("animalStore").style.visibility = 'visible'
+    document.getElementById("animalStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.clownStunt[0] * 0.75)) {
-    document.getElementById("stuntStore").style.visibility = 'visible'
+    document.getElementById("stuntStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.clownPretzel[0] * 0.75)) {
-    document.getElementById("pretzelStore").style.visibility = 'visible'
+    document.getElementById("pretzelStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.clownDangerous[0] * 0.75)) {
-    document.getElementById("dangerousStore").style.visibility = 'visible'
+    document.getElementById("dangerousStore").style.display = 'block'
   }
   if (gameData.gameStats[0] >= (gameData.clownDisgusting[0] * 0.75)) {
-    document.getElementById("disgustingStore").style.visibility = 'visible'
+    document.getElementById("disgustingStore").style.display = 'block'
   }
 }
 
