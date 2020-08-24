@@ -61,7 +61,8 @@ a {
 	position:absolute;
 	width:60%;
 	height:80%;
-	background-image: url(https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/placeholder3.png);
+	background-image: url('https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/clownCircus.png');
+	background-size:100% 100%;
 }
 
 .gameStats {
