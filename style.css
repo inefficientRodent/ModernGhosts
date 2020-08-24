@@ -52,7 +52,7 @@ a {
 	bottom:0px;
 	height:20%;
 	width:100%;
-	background-image: url("https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/Sandycus.png");
+	background-image: url("https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/img/Sandycus.png");
 }
 
 .center-panel {
@@ -61,7 +61,7 @@ a {
 	position:absolute;
 	width:60%;
 	height:80%;
-	background-image: url('https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/clownCircus.png');
+	background-image: url('https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/img/clownCircus.png');
 	background-size:100% 100%;
 }
 
