@@ -11,17 +11,16 @@
   
    <!--Banner for saving, deleting save, etc-->
    <div class="topBanner">
-     <a href="#" onclick="saveGame()" class="optionButtons">Save Game</a> \
-    <a href="#" onclick="showDelete()" class="optionButtons delete"> Delete Save</a> /
-    <a href="#" onclick="permDelete()" style="visibility:hidden" id="showDelete" class="optionButtons"> REALLY really delete \</a> 
-    <a href="#" onclick="closeDelete()" style="visibility:hidden" id="showDeleteNevermind" class="optionButtons"> Cancel /</a> 
+		<a href="#" onclick="saveGame()">Save Game</a> \
+		<a href="#" onclick="showDelete()" class="delete"> Delete Save</a> /
+		<a href="#" onclick="permDelete()" id="showDelete" class="optionButtons deleteOpts"> REALLY really delete \</a> 
+		<a href="#" onclick="closeDelete()" id="showDeleteNevermind" class="optionButtons deleteOpts"> Cancel /</a> 
   </div> 
   
   
   <!--Clown purchasing panel-->
-  <div class="left panel">
-    
-    <div style="visibility:visible" class="storeOption">
+  <div class="sidePanel left">
+    <div style="display:block" class="storeOption">
       <img src="funkylad1.png" class="storeImage">
       <button onclick="clownPurchase('comedy')" class="clownbutton">Buy Comedy</button>
       <text id="comedyOwned" class="storeDescription">Owned: 0</text><br>
@@ -92,14 +91,14 @@
       <text class="storeDescription">Hire a clown who neverendingly pulls a rope of fabric from his mouth.</text>
       <text class="storeFlavour">"That... That's not natural..."</text>
     </div>
-  </div>
-    
-    
   
+  
+  </div>
+
   <!--Building and Upgrades-->
-  <div class="right panel">
-    
-    <div style="visibility:visible" class="storeOptionRight">
+  <div class="sidePanel right">
+  
+    <div style="display:block" class="storeOptionRight">
       <img src="tent.png" class="storeImage">
       <button onclick="buildingPurchase('tent')" class="buildbutton">Buy Tent</button>
       <text id="tentOwned" class="storeDescription">Owned: 0</text><br>
@@ -188,19 +187,24 @@
       <text class="storeDescription">Spawn a hive. Hives home an ever-increasing number of clowns. Less effective at higher numbers.</text>
       <text class="storeFlavour">*Chitter chitter*</text>
     </div>
-  
-  <div class="bottom-panel panel">
+  </div>
+
+  <!--Player Actions, stats-->
+  <div class="bottom-panel">
     
     <div class="gameStats">
-      <text id="currentCash" class="playerStat">Current Cash: $0</text>
-      <text id="currentContempt" class="playerStat">Clown Contempt: ###</text>
-      <text id="currentFear" class="playerStat">Audience Fear: ###</text>
-      <text id="currentClimit" class="playerStat">Clown Limit: ###</text>
+      <text class="playerStat">Current Cash:</text><text class="playerStats" id="currentCash">###</text>
+      <text class="playerStat">Clown Contempt:</text><text class="playerStats" id="currentContempt">###</text><text class="playerStat">Audience Fear:</text><text class="playerStats" id="currentFear">###</text>
+      <text class="playerStat">Clown Limit:</text><text class="playerStats" id="currentClimit">###/###</text>
+	  <text class="playerStat">Belief:</text><text class="playerStats" id="currentBelief">###</text>
     </div>
     
-    
-    <button onclick="perform()" class="playerButtons">Perform!</button>
-    
+    <div class="gameActions">
+		<button onclick="perform()" class="playerButtons">Perform!</button>
+		<button onclick="play()" class="playerButtons">Play!</button>
+		<button onclick="pray()" class="playerButtons">Pray!</button>
+		<button onclick="passify()" class="playerButtons">Passify!</button>
+    </div>
     
     
    
