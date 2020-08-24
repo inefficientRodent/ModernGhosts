@@ -2,7 +2,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Clown's Circus</title>
-  <link rel="icon" href="nose.png">
+  <link rel="icon" href="img/nose.png">
   <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 
@@ -27,11 +27,11 @@
 		<a href="#" onclick="swapStore('clownStore', 'buildStore')">Clowns</a>
 		<a href="#" onclick="swapStore('buildStore', 'clownStore')">Buildings</a>
 	</div>
-
-	<div id="clownStore" class="clownStore" style="display:block;">
+	<div class="store">
+		<div id="clownStore" style="display:block;">
   
 		<div style="display:block" class="storeOption">
-		  <img src="funkylad1.png" class="storeImage">
+		  <img src="img/funkylad1.png" class="storeImage">
 		  <button onclick="clownPurchase('comedy')" class="clownbutton">Buy Comedy</button>
 		  <text id="comedyOwned" class="storeDescription">Owned: 0</text><br>
 		  <text id="comedyCost">Current cost is: %comedyCost% </text><br>
@@ -104,9 +104,9 @@
   
 	</div>
 	
-	<div id="buildStore" class="buildStore" style="display:none;">
+		<div id="buildStore" style="display:none;">
 			<div style="display:block" class="storeOption build">
-			  <img src="tent.png" class="storeImage">
+			  <img src="img/tent.png" class="storeImage">
 			  <button onclick="buildingPurchase('tent')" class="buildbutton">Buy Tent</button>
 			  <text id="tentOwned" class="storeDescription">Owned: 0</text><br>
 			  <text id="tentCost">Current cost is: %tentCost%</text><br>
@@ -115,7 +115,7 @@
 			</div>
 			
 			<div class="storeOption build" id="vanStore">
-			  <img src="van.png" class="storeImage">
+			  <img src="img/van.png" class="storeImage">
 			  <button onclick="buildingPurchase('van')" class="buildbutton">Buy Clownpervan</button>
 			  <text id="vanOwned" class="storeDescription">Owned: 0</text><br>
 			  <text id="vanCost">Current cost is: %vanCost%</text><br>
@@ -124,7 +124,7 @@
 			</div>
 			
 			<div class="storeOption build" id="motelStore">
-			  <img src="motel-2-export.png" class="storeImage">
+			  <img src="img/motel-2-export.png" class="storeImage">
 			  <button onclick="buildingPurchase('motel')" class="buildbutton">Buy Motel</button>
 			  <text id="motelOwned" class="storeDescription">Owned: 0</text><br>
 			  <text id="motelCost">Current cost is: %motelCost%</text><br>
@@ -133,7 +133,7 @@
 			</div>
 			
 			<div class="storeOption build" id="clowndoStore">
-			  <img src="clowndo-export.png" class="storeImage">
+			  <img src="img/clowndo-export.png" class="storeImage">
 			  <button onclick="buildingPurchase('clowndo')" class="buildbutton">Buy Clowndo</button>
 			  <text id="clowndoOwned" class="storeDescription">Owned: 0</text><br>
 			  <text id="clowndoCost">Current cost is: %clowndoCost%</text><br>
@@ -142,7 +142,7 @@
 			</div>
 			
 			<div class="storeOption build" id="hotelStore">
-			  <img src="hotel-export.png" class="storeImage">
+			  <img src="img/hotel-export.png" class="storeImage">
 			  <button onclick="buildingPurchase('hotel')" class="buildbutton">Buy Hotel</button>
 			  <text id="hotelOwned" class="storeDescription">Owned: 0</text><br>
 			  <text id="hotelCost">Current cost is: %hotelCost%</text><br>
@@ -195,10 +195,14 @@
 			  <text class="storeFlavour">*Chitter chitter*</text>
 			</div>
 		</div>
+	</div>
+  
   </div>
 
-  <!--Building and Upgrades-->
+  <!--Upgrades-->
+  <div class="sidePanel right">
   
+  </div>
 
   <!--Player Actions, stats-->
   <div class="bottom-panel">
