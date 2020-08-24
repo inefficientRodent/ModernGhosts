@@ -1,14 +1,3 @@
-.topBanner {
-	position:absolute;
-	top:0px;
-	left:0px;
-	width:100%;
-	border-bottom: 1px dotted black;
-	min-width:1180px;
-	height:2%;
-	background-color:grey;
-}
-
 a {
 	color:white;
 	text-decoration:underline;
@@ -22,14 +11,22 @@ a {
 	visibility:hidden;
 }
 
+
+/*Dedicated to the UI*/
+.topBanner {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	border-bottom: 1px dotted black;
+	min-width:1180px;
+	height:19px;
+	background-color:grey;
+}
 .left {
 	left:0px;
 	background-color:#a70000;
-	overflow-y: scroll;
-	scrollbar-width:thin;
-	scrollbar-color:#bd0b0b #820000;
 }
-
 .right {
 	right:0px;
 	background-color:#5b63c5;
@@ -37,14 +34,12 @@ a {
 	scrollbar-width:thin;
 	scrollbar-color:#3440c9 #2c3496
 }
-
 .sidePanel {
 	position:fixed;
-	top:2%;
+	top:19px;
 	height:80%;
 	width:20%;
 }
-
 .bottom-panel {
 	position:fixed;
 	display: flex;
@@ -52,19 +47,21 @@ a {
 	bottom:0px;
 	height:20%;
 	width:100%;
-	background-image: url("https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/img/Sandycus.png");
+	background-image: url("https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/img/Sandycus.png");
 }
-
 .center-panel {
-	top:2%;
+	top:19px;
 	left:20%;
 	position:absolute;
 	width:60%;
 	height:80%;
-	background-image: url('https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/img/clownCircus.png');
+	background-image: url('https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/img/clownCircus.png');
 	background-size:100% 100%;
 }
 
+
+
+/*Dedicated to the bottom panel, player stats, player actions*/
 .gameStats {
 	position:relative;
 	width:30%;
@@ -72,12 +69,10 @@ a {
 	left:1%;
 	top:10%;
 }
-
 .gameActions {
 	position:absolute;
 	left:35%;
 }
-
 .playerStat {
 	background-color:gray;
 	height:30px;
@@ -93,13 +88,52 @@ a {
 	border:0.5px solid black;
 }
 
+
+
+/*For the store and everything with that*/
 .storeImage {
   position: relative;
   height:50px;
   width:50px;
   top: 5px;
 }
+.store {
+	position:relative;
+	overflow-y: scroll;
+	scrollbar-width:thin;
+	scrollbar-color:#bd0b0b #820000;
+	height:95%;
+	top:1%;
+}
+.build {
+	border: 1px solid black;
+	background-color: #5f87dd;
+	display:none;
+}
+.storeOption {
+	border: 1px solid black;
+	background-color: #bd0101;
+	margin:2px;
+	padding:2px;
+	left:2px;
+	top:1px;
+	width:98%;
+	height:175px;
+	display:none;
+}
+.storeFlavour {
+	font-size:12px;
+	float:right;
+	bottom:0px;
+}
+.upgradebutton {
+	width:40px
+}
+.storeDescription {
+	font-size:15px;
+}
 
+/*Technically part of the store, but separate, because preddy.*/
 .clownbutton {
 	background:#de4242;
 	border-radius:90px;
@@ -112,25 +146,6 @@ a {
 	position:relative;
 	top:1px;
 }
-
-.storeOption {
-	border: 1px solid black;
-	background-color: #bd0101;
-	margin:2px;
-	padding:2px;
-	left:2px;
-	top:1px;
-	width:98%;
-	height:175px;
-	display:none;
-}
-
-.build {
-	border: 1px solid black;
-	background-color: #5f87dd;
-	display:none;
-}
-
 .buildbutton {
 	background:#7a98ec;
 	border-radius:90px;
@@ -139,27 +154,14 @@ a {
 	font-weight:bold;
 	padding:10px 10px;
 }
-
 .buildbutton:active {
 	position:relative;
 	top:1px;
 }
 
-.upgradebutton {
-	width:40px
-}
-
-.storeDescription {
-	font-size:15px;
-}
-
-.storeFlavour {
-	font-size:12px;
-	float:right;
-	bottom:0px;
-}
 
 
+/*Technically should be part of the Bottom Panel section but it's big, clunky, and I like it like this*/
 .playerButtons {
 	width:150px;
   	background:#FCF8F8;
@@ -175,9 +177,7 @@ a {
   	position: relative;
   	transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
 }
-
 .playerButtons:focus { outline: 0; }
-
 	.playerButtons:before, .playerButtons:after {
 	  position: absolute;
 	  content: '';
@@ -189,30 +189,25 @@ a {
 	  transition: all ease-in-out 0.5s;
 	  background-repeat: no-repeat;
 }
-
 .playerButtons:before {
 	  display: none;
 	  top: -75%;
 	  background-image: radial-gradient(circle, #bd0101 20%, transparent 20%), radial-gradient(circle, transparent 20%, #bd0101 20%, transparent 30%), radial-gradient(circle, #bd0101 20%, transparent 20%), radial-gradient(circle, #bd0101 20%, transparent 20%), radial-gradient(circle, transparent 10%, #bd0101 15%, transparent 20%), radial-gradient(circle, #bd0101 20%, transparent 20%), radial-gradient(circle, #bd0101 20%, transparent 20%), radial-gradient(circle, #bd0101 20%, transparent 20%), radial-gradient(circle, #bd0101 20%, transparent 20%);
 	  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
 }
-
 .playerButtons:after {
 	  display: none;
 	  bottom: -75%;
 	  background-image: radial-gradient(circle, #bd0101 20%, transparent 20%), radial-gradient(circle, #bd0101 20%, transparent 20%), radial-gradient(circle, transparent 10%, #bd0101 15%, transparent 20%), radial-gradient(circle, #bd0101 20%, transparent 20%), radial-gradient(circle, #bd0101 20%, transparent 20%), radial-gradient(circle, #bd0101 20%, transparent 20%), radial-gradient(circle, #bd0101 20%, transparent 20%);
 	  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
 }
-
 .playerButtons:active {
 	  transform: scale(0.9);
 }
-
 .playerButtons.animate:before {
 	  display: block;
 	  animation: topBubbles ease-in-out 0.75s forwards;
 }
-
 .playerButtons.animate:after {
 	  display: block;
 	  animation: bottomBubbles ease-in-out 0.75s forwards;
