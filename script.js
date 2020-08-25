@@ -1,4 +1,6 @@
 var gameData = {
+  version:"0.2",
+	
   //Cash/player related variables
   //Array    : Cash, ATC, Perform, Fear, Contempt, Contempt Limit, Current Clowns, Clown Limit
   gameStats: [0.0, 0.0, 1.0, 0.0, 0.0, 100.0, 0, 0],
@@ -6,7 +8,7 @@ var gameData = {
   //Clown Purchase Variables
   //Array:    Cost, Owned, Multiplier, State
   clownComedy: [20, 0, 1, "unlocked"],
-  clownJuggling: [500, 0, 1, "locked"],
+  clownJuggling: [300, 0, 1, "locked"],
   clownBalancing: [5000, 0, 1, "locked"],
   clownAnimal: [25000, 0, 1, "locked"],
   clownStunt: [500000, 0, 1, "locked"],
@@ -27,10 +29,45 @@ var gameData = {
   buildSpire: [5000000000000,0,"locked"],
   buildHive: [666666666666666666, 0, "locked", 1]
 }
+
 //This should load the game properly now
 var savegame = JSON.parse(localStorage.getItem("ClownCircus"))
 if (savegame !== null) {
-  gameData = savegame
+	if (savegame.version !== gameData.version) {
+		console.log("Version mismatch! Updating...");
+		/*if statements to update missing variables
+		USE THIS template for new variables
+		if (typeof savegame.VARIABLENAME !== "undefined") gameData.VARIABLENAME = savegame.VARIABLENAME
+		*/
+		if (typeof savegame.gameStats !== "undefined") gameData.gameStats = savegame.gameStats;
+		if (typeof savegame.clownComedy !== "undefined") gameData.clownComedy = savegame.clownComedy;
+		if (typeof savegame.clownJuggling !== "undefined") gameData.clownJuggling = savegame.clownJuggling;
+		if (typeof savegame.clownBalancing !== "undefined") gameData.clownBalancing = savegame.clownBalancing
+		if (typeof savegame.clownAnimal !== "undefined") gameData.clownAnimal = savegame.clownAnimal
+		if (typeof savegame.clownStunt !== "undefined") gameData.clownStunt = savegame.clownStunt
+		if (typeof savegame.clownPretzel !== "undefined") gameData.clownPretzel = savegame.clownPretzel
+		if (typeof savegame.clownDangerous !== "undefined") gameData.clownDangerous = savegame.clownDangerous
+		if (typeof savegame.clownDisgusting !== "undefined") gameData.clownDisgusting = savegame.clownDisgusting
+		if (typeof savegame.buildTent !== "undefined") gameData.buildTent = savegame.buildTent
+		if (typeof savegame.buildVan !== "undefined") gameData.buildVan = savegame.buildVan
+		if (typeof savegame.buildMotel !== "undefined") gameData.buildMotel = savegame.buildMotel
+		if (typeof savegame.buildClowndo !== "undefined") gameData.buildClowndo = savegame.buildClowndo
+		if (typeof savegame.buildHotel !== "undefined") gameData.buildHotel = savegame.buildHotel
+		if (typeof savegame.buildMansion !== "undefined") gameData.buildMansion = savegame.buildMansion
+		if (typeof savegame.buildTown !== "undefined") gameData.buildTown = savegame.buildTown
+		if (typeof savegame.buildCountry !== "undefined") gameData.buildCountry = savegame.buildCountry
+		if (typeof savegame.buildSpire !== "undefined") gameData.buildSpire = savegame.buildSpire
+		if (typeof savegame.buildHive !== "undefined") gameData.buildHive = savegame.buildHive
+		
+		
+	}
+	else if (savegame.version == gameData.version) {
+		gameData = savegame;
+		console.log("Save loaded successfully!");
+	}
+	else {
+		console.log("No save found! Did you delete localStorage recently?")
+	}
 }
 
 function swapStore(tab, tab2) {
@@ -168,6 +205,7 @@ function shortenVal(val) {
 function saveGame() {
   localStorage.setItem("ClownCircus", JSON.stringify(gameData))
 }
+
 function showDelete() {
   document.getElementById("showDelete").style.visibility = 'visible'
   document.getElementById("showDeleteNevermind").style.visibility = 'visible'
