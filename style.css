@@ -170,6 +170,8 @@ a {
 	font-size:17px;
 	font-weight:bold;
 	padding:10px 10px;
+	top:10px;
+	position:absolute;
 }
 .buildbutton:active {
 	position:relative;
