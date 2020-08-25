@@ -100,6 +100,9 @@ function updateHTML() {
   if (gameData.gameStats[6] == gameData.gameStats[7]) {
     document.getElementById("currentClimit").style.color = "red"
   }
+  
+  document.getElementById('cashPerSecond').innerHTML = shortenVal(calcPerSecond())
+  
 }
 //This is for updating the costs of buildings and clowns - UPDATE CLOWNS AND BUILDINGS
 function updateCosts() {
@@ -156,22 +159,35 @@ function saveGame() {
 Shamelessly stolen from stackoverflow threads
 Shamelessly IMPROVED from those stackoverflow threads
 */
-function shortenVal(value) {
-	var newValue = value;
-    if (value >= 1000000) {
-        var suffixes = ["", "k", "m", "b","t"];
-        var suffixNum = Math.floor( ((""+(value)).length -1)/3 );
-        var shortValue = '';
-		
-        shortValue = parseFloat( ((value / Math.pow(1000,suffixNum))));
-        var dotLessShortValue = (shortValue + '').replace(/[^a-zA-Z 0-9]+/g,'');
-        if (shortValue % 1 != 0)  shortValue = shortValue.toFixed(3);
-        newValue = shortValue+suffixes[suffixNum];
-    }
-	else {
-		newValue = value.toFixed(2)
+function shortenVal(val) {
+	if (val >= 0) {
+		valReturn = val.toFixed(1)
+	}	
+	if (val >= 1000) {
+		valReturn = ((val / 1000).toFixed(3)) + "k"
 	}
-    return newValue;
+	if (val >= 1000000) {
+		valReturn = ((val / 1000000).toFixed(3)) + "m"
+	}
+	if ((val >= 1000000000) && (val < 1000000000000)) {
+		valReturn = ((val / 1000000000).toFixed(3)) + "b"
+	}
+	if (val >= 1000000000000) {
+    valReturn = ((val / 1000000000000).toFixed(3)) + "t"
+	}
+	if (val >= 1000000000000000) {
+		valReturn = ((val / 1000000000000000).toFixed(3)) + "q"
+	}
+	if (val >= 1000000000000000000) {
+		valReturn=((val / 1000000000000000000).toFixed(3)) + "Q"
+	}
+	if (val >= 1000000000000000000000) {
+		valReturn=((val / 1000000000000000000000).toFixed(3)) + "s"
+	}
+	if (val >= 1000000000000000000000000) {
+		valReturn=((val / 1000000000000000000000).toFixed(3)) + "S"
+	}
+  return valReturn
 }
 
 function showDelete() {
@@ -427,9 +443,6 @@ function checkAvailable() {
 //Per second
 var mainGameLoop = window.setInterval(function() {
   checkAvailable()
-  //For later use - adds varPassiveIncome to varCash every second
-  gameData.gameStats[0] += (((gameData.clownJuggling[1] * 1) * gameData.clownJuggling[2]) + ((gameData.clownBalancing[1] * 5) * gameData.clownBalancing[2]) + ((gameData.clownAnimal[1] * 20) * gameData.clownAnimal[2]) + ((gameData.clownStunt[1] * 100) * gameData.clownStunt[2]) + ((gameData.clownPretzel[1] * 200) * gameData.clownPretzel[2]) + ((gameData.clownDangerous[1] * 500) * gameData.clownDangerous[2]) + ((gameData.clownDisgusting[1] * 1000) * gameData.clownDisgusting[2]) + ((gameData.buildTown[1] * 20) * gameData.buildTown[3]))
-  gameData.gameStats[1] += (((gameData.clownJuggling[1] * 1) * gameData.clownJuggling[2]) + ((gameData.clownBalancing[1] * 5) * gameData.clownBalancing[2]) + ((gameData.clownAnimal[1] * 20) * gameData.clownAnimal[2]) + ((gameData.clownStunt[1] * 100) * gameData.clownStunt[2]) + ((gameData.clownPretzel[1] * 200) * gameData.clownPretzel[2]) + ((gameData.clownDangerous[1] * 500) * gameData.clownDangerous[2]) + ((gameData.clownDisgusting[1] * 1000) * gameData.clownDisgusting[2]) + ((gameData.buildTown[1] * 20) * gameData.buildTown[3]))
 }, 1000)
 
 //Per 15 seconds
@@ -439,9 +452,18 @@ var saveGameLoop = window.setInterval(function() {
 
 //Per tick (12ms)
 var updateLoop = window.setInterval(function() {
-  updateHTML()
+	gameData.gameStats[0] += calcPerSecond()
+	gameData.gameStats[1] += calcPerSecond()
+	updateHTML()
+	
+	
 }, 12)
 
+function calcPerSecond() {
+	var perSecond = 0.0;
+	perSecond += (((gameData.clownJuggling[1] * 1) * gameData.clownJuggling[2]) + ((gameData.clownBalancing[1] * 5) * gameData.clownBalancing[2]) + ((gameData.clownAnimal[1] * 20) * gameData.clownAnimal[2]) + ((gameData.clownStunt[1] * 100) * gameData.clownStunt[2]) + ((gameData.clownPretzel[1] * 200) * gameData.clownPretzel[2]) + ((gameData.clownDangerous[1] * 500) * gameData.clownDangerous[2]) + ((gameData.clownDisgusting[1] * 1000) * gameData.clownDisgusting[2]) + ((gameData.buildTown[1] * 20) * gameData.buildTown[3]))
+	return perSecond
+}
 
 //Perform button js
 var animateButton = function(e) {
