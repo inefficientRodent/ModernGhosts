@@ -15,8 +15,6 @@ var gameData = {
   clownPretzel: [1000000, 0, 1, "locked"],
   clownDangerous: [25000000, 0, 1, "locked"],
   clownDisgusting: [1000000000, 0, 1, "locked"],
-  
-  
   //BuildArray: Cost, Owned, State, (town mult/hiveLimit)
   buildTent: [10, 0, "unlocked"],
   buildVan: [750, 0, "locked"],
@@ -29,7 +27,6 @@ var gameData = {
   buildSpire: [5000000000000,0,"locked"],
   buildHive: [666666666666666666, 0, "locked", 1]
 }
-
 //This should load the game properly now
 var savegame = JSON.parse(localStorage.getItem("ClownCircus"))
 if (savegame !== null) {
@@ -72,15 +69,13 @@ if (savegame !== null) {
 
 function swapStore(tab, tab2) {
 	document.getElementById(tab).style.display = 'block'
-	document.getElementById(tab2).style.display = 'none'
-	
+	document.getElementById(tab2).style.display = 'none'	
 }
 
 //This is for updating the player's stats - UPDATE PLAYER STATS
 function updateHTML() {
   document.getElementById("currentCash").innerHTML = "$" + shortenVal(gameData.gameStats[0])
   //handling contempt is fun. I think paired with the contempt it should decrease income by a fraction according to which rung you're in?
-  
   document.getElementById("currentContempt").innerHTML = shortenVal(gameData.gameStats[4]) + "/" + shortenVal(gameData.gameStats[5])
   if (gameData.gameStats[4] >= 0) {
     document.getElementById("currentContempt").style.color = "black";
@@ -151,59 +146,32 @@ function loadGame() {
   updateCosts()
 }
 
-/*
- Function for rounding values to K, M, B, ETC
- This is possibly the dumbest way to do this 
- But it works, it's so stupid though, christ.
-*/
-function shortenVal(val) {
-  valReturn = 0
-  if (val == 0) {
-	return valReturn
-  }	  
-  if ((val >= 0) && (val < 1000)) {
-    valReturn = (val.toFixed(2))
-    return valReturn
-  }
-  if ((val >= 1000) && (val < 1000000)) {
-    valReturn =((val/1000).toFixed(2)) + "Ki"
-  }
-  if ((val >= 1000000) && (val < 1000000000)) {
-    valReturn =((val/1000000).toFixed(2)) + "Mi"
-  }
-  if ((val >= 1000000000) && (val < 1000000000000)) {
-    valReturn =((val/1000000000).toFixed(2)) + "Bi"
-  }
-  if ((val >= 1000000000000) && (val  < 1000000000000000)) {
-    valReturn =((val/1000000000000).toFixed(2)) + "Tr"
-  }
-  if ((val >= 1000000000000000) && (val < 1000000000000000000)) {
-    valReturn =((val/1000000000000000).toFixed(2)) + "Qa"
-  }
-  if ((val >= 1000000000000000000) && (val < 1000000000000000000000)) {
-    valReturn=((val/1000000000000000000).toFixed(2)) + "Qu"
-  }
-  if ((val >= 1000000000000000000000) && (val < 1000000000000000000000000)) {
-    valReturn=((val/1000000000000000000000).toFixed(2)) + "Sx"
-  }
-  if ((val >= 1000000000000000000000000) && (val < 1000000000000000000000000000)) {
-    valReturn=((val/1000000000000000000000000).toFixed(2)) + "Sp"
-  }
-  if ((val >= 1000000000000000000000000000) && (val < 1000000000000000000000000000000)) {
-    valReturn=((val/1000000000000000000000000000).toFixed(2)) + "Oc"
-  }
-  if ((val >= 1000000000000000000000000000000) && (val < 1000000000000000000000000000000000)) {
-    valReturn=((val/1000000000000000000000000000000).toFixed(2)) + "Ni"
-  }
-  if ((val >= 1000000000000000000000000000000000) && (val < 1000000000000000000000000000000000000)) {
-    valReturn=((val/1000000000000000000000000000000000).toFixed(2)) + "De"
-  }
-  return valReturn
-}
-
-
 function saveGame() {
   localStorage.setItem("ClownCircus", JSON.stringify(gameData))
+}
+
+/*Function for rounding values to K, M, B, ETC
+Shamelessly stolen from stackoverflow threads
+Shamelessly IMPROVED from those stackoverflow threads
+*/
+function shortenVal(value) {
+	var newValue = value;
+    if (value >= 1000000) {
+        var suffixes = ["","k","m","b","t","q","Q","s","S","o","n","d"];
+        var suffixNum = Math.floor( ((""+(value)).length -1)/3 );
+        var shortValue = '';
+		
+        shortValue = parseFloat( ((value / Math.pow(1000,suffixNum))));
+        var dotLessShortValue = (shortValue + '').replace(/[^a-zA-Z 0-9]+/g,'');
+        if (shortValue % 1 != 0)  shortValue = shortValue.toFixed(3);
+        newValue = shortValue+suffixes[suffixNum];
+    }
+	else {
+		if (value > 1000) {
+			newValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
+	}
+    return newValue;
 }
 
 function showDelete() {
@@ -226,7 +194,7 @@ function permDelete() {
 }
 //Perform function for adding cash money baby
 function perform() {
-  gameData.gameStats[0] = gameData.gameStats[0] + gameData.gameStats[2]
+  gameData.gameStats[0] += gameData.gameStats[2]
   gameData.gameStats[1] += gameData.gameStats[2]
 }
 
@@ -234,7 +202,7 @@ function perform() {
 
 //Purchasing function, pass in clownType as selection via button click function storePurchase(var)
 //Potential to make this do x10, x100 at later date? Pass in two variables - clownType and amount ???
-function clownPurchase(clownType) {
+function clownPurchase(clownType, amount) {
   if (gameData.gameStats[6] < gameData.gameStats[7]) {
     if (clownType == "comedy") {
       if (gameData.gameStats[0] >= gameData.clownComedy[0]) {
