@@ -75,6 +75,8 @@ function swapStore(tab, tab2) {
 //This is for updating the player's stats - UPDATE PLAYER STATS
 function updateHTML() {
   document.getElementById("currentCash").innerHTML = "$" + shortenVal(gameData.gameStats[0])
+  
+  
   //handling contempt is fun. I think paired with the contempt it should decrease income by a fraction according to which rung you're in?
   document.getElementById("currentContempt").innerHTML = shortenVal(gameData.gameStats[4]) + "/" + shortenVal(gameData.gameStats[5])
   if (gameData.gameStats[4] >= 0) {
@@ -157,7 +159,7 @@ Shamelessly IMPROVED from those stackoverflow threads
 function shortenVal(value) {
 	var newValue = value;
     if (value >= 1000000) {
-        var suffixes = ["","k","m","b","t","q","Q","s","S","o","n","d"];
+        var suffixes = ["", "k", "m", "b","t"];
         var suffixNum = Math.floor( ((""+(value)).length -1)/3 );
         var shortValue = '';
 		
@@ -167,9 +169,7 @@ function shortenVal(value) {
         newValue = shortValue+suffixes[suffixNum];
     }
 	else {
-		if (value > 1000) {
-			newValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-		}
+		newValue = value.toFixed(2)
 	}
     return newValue;
 }
