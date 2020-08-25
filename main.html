@@ -11,10 +11,16 @@
   
    <!--Banner for saving, deleting save, etc-->
    <div class="topBanner">
-		<a href="#" onclick="saveGame()">Save Game</a> \
-		<a href="#" onclick="showDelete()" class="delete"> Delete Save</a> /
-		<a href="#" onclick="permDelete()" id="showDelete" class="optionButtons deleteOpts"> REALLY really delete</a> \ 
-		<a href="#" onclick="closeDelete()" id="showDeleteNevermind" class="optionButtons deleteOpts"> Cancel</a> / 
+		<div class="banLeftWrapper">
+			<a href="#" onclick="saveGame()">Save Game</a> \
+			<a href="#" onclick="showDelete()" class="delete"> Delete Save</a> /
+			<a href="#" onclick="permDelete()" id="showDelete" class="optionButtons deleteOpts"> REALLY really delete \</a> 
+			<a href="#" onclick="closeDelete()" id="showDeleteNevermind" class="optionButtons deleteOpts"> Cancel /</a>
+		</div>
+		
+		<div class="banRightWrapper">
+			<text>You are earning $</text><text id="cashPerSecond">0</text><text> per second</text>
+		</div>
   </div> 
   
 	<div class="center-panel">
@@ -32,7 +38,7 @@
   
 		<div style="display:block" class="storeOption">
 		  <img src="img/funkylad1.png" class="storeImage">
-		  <button onclick="clownPurchase('comedy')" class="clownbutton">Buy Comedy</button>
+		  <button onclick="clownPurchase('comedy', 1)" class="clownbutton">Buy Comedy</button>
 		  <text id="comedyOwned" class="storeDescription">Owned: 0</text><br>
 		  <text id="comedyCost" class="storeCost">Current cost is: %comedyCost% </text><br>
 		  <text class="storeDescription">Hire another clown to perform wtih you, increasing revenue slightly from performing!</text>
@@ -41,7 +47,7 @@
 		
 		<div class="storeOption" id="jugglingStore">
 		  <img src="" class="storeImage">
-		  <button onclick="clownPurchase('juggling')" class="clownbutton">Buy Juggling</button>
+		  <button onclick="clownPurchase('juggling', 1)" class="clownbutton">Buy Juggling</button>
 		  <text id="jugglingOwned" class="storeDescription">Owned: 0</text><br>
 		  <text id="jugglingCost" class="storeCost">Current cost is: %jugglingCost%</text><br>
 		  <text class="storeDescription">Hire a passable juggler who'll perform without you! Automatically generates income!</text>
@@ -50,7 +56,7 @@
 		
 		<div class="storeOption" id="balancingStore">
 		  <img src="" class="storeImage">
-		  <button onclick="clownPurchase('balancing')" class="clownbutton">Buy Balancing</button>
+		  <button onclick="clownPurchase('balancing', 1)" class="clownbutton">Buy Balancing</button>
 		  <text id="balancingOwned" class="storeDescription">Owned: 0</text><br>
 		  <text id="balancingCost" class="storeCost">Current cost is: %balancingCost%</text><br>
 		  <text class="storeDescription">Hire a tightrope walking clown which attracts even more customers!</text>
@@ -59,7 +65,7 @@
 		
 		<div class="storeOption" id="animalStore">
 		  <img src="" class="storeImage">
-		  <button onclick="clownPurchase('animal')" class="clownbutton">Buy Animal</button>
+		  <button onclick="clownPurchase('animal', 1)" class="clownbutton">Buy Animal</button>
 		  <text id="animalOwned" class="storeDescription">Owned: 0</text><br>
 		  <text id="animalCost" class="storeCost">Current cost is: %animalCost%</text><br>
 		  <text class="storeDescription">Hire an animal taming clown, comes with free adorable animals!</text>
@@ -68,7 +74,7 @@
 		
 		<div class="storeOption" id="stuntStore">
 		  <img src="" class="storeImage">
-		  <button onclick="clownPurchase('stunt')" class="clownbutton">Buy Stunt</button>
+		  <button onclick="clownPurchase('stunt', 1)" class="clownbutton">Buy Stunt</button>
 		  <text id="stuntOwned" class="storeDescription">Owned: 0</text><br>
 		  <text id="stuntCost" class="storeCost">Current cost is: %stuntCost%</text><br>
 		  <text class="storeDescription">Hire a clown who loves being blasted out a cannon!</text>
@@ -77,7 +83,7 @@
 		
 		<div class="storeOption" id="pretzelStore">
 		  <img src="" class="storeImage">
-		  <button onclick="clownPurchase('pretzel')" class="clownbutton">Buy Pretzel</button>
+		  <button onclick="clownPurchase('pretzel', 1)" class="clownbutton">Buy Pretzel</button>
 		  <text id="pretzelOwned" class="storeDescription">Owned: 0</text><br>
 		  <text id="pretzelCost" class="storeCost">Current cost is: %pretzelCost%</text><br>
 		  <text class="storeDescription">Hire a highly flexible clown to contort for the audience's amusement!</text>
@@ -86,7 +92,7 @@
 		
 		<div class="storeOption" id="dangerousStore">
 		  <img src="" class="storeImage">
-		  <button onclick="clownPurchase('dangerous')" class="clownbutton">Buy Dangerous</button>
+		  <button onclick="clownPurchase('dangerous', 1)" class="clownbutton">Buy Dangerous</button>
 		  <text id="dangerousOwned" class="storeDescription">Owned: 0</text><br>
 		  <text id="dangerousCost" class="storeCost">Current cost is: %dangerousCost%</text><br>
 		  <text class="storeDescription">Hire a clown with no regard for OSHA guidelines. Highly flamable act!</text>
@@ -95,7 +101,7 @@
 		
 		<div class="storeOption" id="disgustingStore">
 		  <img src="" class="storeImage">
-		  <button onclick="clownPurchase('disgusting')" class="clownbutton">Buy Disgusting</button>
+		  <button onclick="clownPurchase('disgusting', 1)" class="clownbutton">Buy Disgusting</button>
 		  <text id="disgustingOwned" class="storeDescription">Owned: 0</text><br>
 		  <text id="disgustingCost" class="storeCost">Current cost is: %disgustingCost%</text><br>
 		  <text class="storeDescription">Hire a clown who neverendingly pulls a rope of fabric from his mouth.</text>
