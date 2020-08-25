@@ -156,12 +156,12 @@ a {
 	font-size:17px;
 	font-weight:bold;
 	padding:10px 10px;
-  top:10px;
+  top:-10px;
   position:relative;
 }
 .clownbutton:active {
 	position:relative;
-	top:11px;
+	top:-9px;
 }
 .buildbutton {
 	background:#7a98ec;
@@ -170,12 +170,12 @@ a {
 	font-size:17px;
 	font-weight:bold;
 	padding:10px 10px;
-	top:10px;
+	top:-10px;
 	position:relative;
 }
 .buildbutton:active {
 	position:relative;
-	top:1px;
+	top:-9px;
 }
 
 
