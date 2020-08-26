@@ -133,14 +133,19 @@ a {
 }
 .storeDescription {
   position:relative;
-  font-size:15px;
+	font-size:15px;
   top:15px;
-  float:right;
 }
 .storeCost {
   position:relative;
 	font-size:15px;
   top:15px;
+}
+.storeOwned {
+  position:relative;
+	font-size:15px;
+  top:15px;
+  float:right;
 }
 
 .store{
