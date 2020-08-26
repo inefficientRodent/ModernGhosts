@@ -39,7 +39,7 @@
 		<div style="display:block" class="storeOption">
 		  <img src="img/funkylad1.png" class="storeImage">
 		  <button onclick="clownPurchase('comedy', 1)" class="clownbutton">Buy Comedy</button>
-		  <text id="comedyOwned" class="storeDescription">Owned: 0</text><br>
+		  <text id="comedyOwned" class="storeOwned">Owned: 0</text><br>
 		  <text id="comedyCost" class="storeCost">Current cost is: %comedyCost% </text><br>
 		  <text class="storeDescription">Hire another clown to perform wtih you, increasing revenue slightly from performing!</text>
 		  <text class="storeFlavour">No longer a one clown show!</text>
@@ -48,7 +48,7 @@
 		<div class="storeOption" id="jugglingStore">
 		  <img src="" class="storeImage">
 		  <button onclick="clownPurchase('juggling', 1)" class="clownbutton">Buy Juggling</button>
-		  <text id="jugglingOwned" class="storeDescription">Owned: 0</text><br>
+		  <text id="jugglingOwned" class="storeOwned">Owned: 0</text><br>
 		  <text id="jugglingCost" class="storeCost">Current cost is: %jugglingCost%</text><br>
 		  <text class="storeDescription">Hire a passable juggler who'll perform without you! Automatically generates income!</text>
 		  <text class="storeFlavour">"Stop dropping the damn things!" -Disgruntled audience member</text>
@@ -57,7 +57,7 @@
 		<div class="storeOption" id="balancingStore">
 		  <img src="" class="storeImage">
 		  <button onclick="clownPurchase('balancing', 1)" class="clownbutton">Buy Balancing</button>
-		  <text id="balancingOwned" class="storeDescription">Owned: 0</text><br>
+		  <text id="balancingOwned" class="storeOwned">Owned: 0</text><br>
 		  <text id="balancingCost" class="storeCost">Current cost is: %balancingCost%</text><br>
 		  <text class="storeDescription">Hire a tightrope walking clown which attracts even more customers!</text>
 		  <text class="storeFlavour">"It surely can't get any scarier than this, right?"</text> 
@@ -66,7 +66,7 @@
 		<div class="storeOption" id="animalStore">
 		  <img src="" class="storeImage">
 		  <button onclick="clownPurchase('animal', 1)" class="clownbutton">Buy Animal</button>
-		  <text id="animalOwned" class="storeDescription">Owned: 0</text><br>
+		  <text id="animalOwned" class="storeOwned">Owned: 0</text><br>
 		  <text id="animalCost" class="storeCost">Current cost is: %animalCost%</text><br>
 		  <text class="storeDescription">Hire an animal taming clown, comes with free adorable animals!</text>
 		  <text class="storeFlavour">"Does he really need to stick his head in there...?"</text>
@@ -75,7 +75,7 @@
 		<div class="storeOption" id="stuntStore">
 		  <img src="" class="storeImage">
 		  <button onclick="clownPurchase('stunt', 1)" class="clownbutton">Buy Stunt</button>
-		  <text id="stuntOwned" class="storeDescription">Owned: 0</text><br>
+		  <text id="stuntOwned" class="storeOwned">Owned: 0</text><br>
 		  <text id="stuntCost" class="storeCost">Current cost is: %stuntCost%</text><br>
 		  <text class="storeDescription">Hire a clown who loves being blasted out a cannon!</text>
 		  <text class="storeFlavour">Behold the Flying Chevkov!</text>
@@ -84,7 +84,7 @@
 		<div class="storeOption" id="pretzelStore">
 		  <img src="" class="storeImage">
 		  <button onclick="clownPurchase('pretzel', 1)" class="clownbutton">Buy Pretzel</button>
-		  <text id="pretzelOwned" class="storeDescription">Owned: 0</text><br>
+		  <text id="pretzelOwned" class="storeOwned">Owned: 0</text><br>
 		  <text id="pretzelCost" class="storeCost">Current cost is: %pretzelCost%</text><br>
 		  <text class="storeDescription">Hire a highly flexible clown to contort for the audience's amusement!</text>
 		  <text class="storeFlavour">"That can't be healthy. I don't think they have bones."</text>
@@ -93,7 +93,7 @@
 		<div class="storeOption" id="dangerousStore">
 		  <img src="" class="storeImage">
 		  <button onclick="clownPurchase('dangerous', 1)" class="clownbutton">Buy Dangerous</button>
-		  <text id="dangerousOwned" class="storeDescription">Owned: 0</text><br>
+		  <text id="dangerousOwned" class="storeOwned">Owned: 0</text><br>
 		  <text id="dangerousCost" class="storeCost">Current cost is: %dangerousCost%</text><br>
 		  <text class="storeDescription">Hire a clown with no regard for OSHA guidelines. Highly flamable act!</text>
 		  <text class="storeFlavour">"Someone should call the Fire Marshal."</text>
@@ -102,7 +102,7 @@
 		<div class="storeOption" id="disgustingStore">
 		  <img src="" class="storeImage">
 		  <button onclick="clownPurchase('disgusting', 1)" class="clownbutton">Buy Disgusting</button>
-		  <text id="disgustingOwned" class="storeDescription">Owned: 0</text><br>
+		  <text id="disgustingOwned" class="storeOwned">Owned: 0</text><br>
 		  <text id="disgustingCost" class="storeCost">Current cost is: %disgustingCost%</text><br>
 		  <text class="storeDescription">Hire a clown who neverendingly pulls a rope of fabric from his mouth.</text>
 		  <text class="storeFlavour">"That... That's not natural..."</text>
@@ -114,7 +114,7 @@
 			<div style="display:block" class="storeOption build">
 			  <img src="img/tent.png" class="storeImage">
 			  <button onclick="buildingPurchase('tent')" class="buildbutton">Buy Tent</button>
-			  <text id="tentOwned" class="storeDescription">Owned: 0</text><br>
+			  <text id="tentOwned" class="storeOwned">Owned: 0</text><br>
 			  <text id="tentCost" class="storeCost">Current cost is: %tentCost%</text><br>
 			  <text class="storeDescription">Purchase a tent to home a single clown.</text>
 			  <text class="storeFlavour">The clowns make it musty.</text>
@@ -123,7 +123,7 @@
 			<div class="storeOption build" id="vanStore">
 			  <img src="img/van.png" class="storeImage">
 			  <button onclick="buildingPurchase('van')" class="buildbutton">Buy Clownpervan</button>
-			  <text id="vanOwned" class="storeDescription">Owned: 0</text><br>
+			  <text id="vanOwned" class="storeOwned">Owned: 0</text><br>
 			  <text id="vanCost" class="storeCost">Current cost is: %vanCost%</text><br>
 			  <text class="storeDescription">Buy your clowns a campervan, able to comfortably home two clowns.</text>
 			  <text class="storeFlavour">A ruckus on the go!</text>
@@ -132,7 +132,7 @@
 			<div class="storeOption build" id="motelStore">
 			  <img src="img/motel-2-export.png" class="storeImage">
 			  <button onclick="buildingPurchase('motel')" class="buildbutton">Buy Motel</button>
-			  <text id="motelOwned" class="storeDescription">Owned: 0</text><br>
+			  <text id="motelOwned" class="storeOwned">Owned: 0</text><br>
 			  <text id="motelCost" class="storeCost">Current cost is: %motelCost%</text><br>
 			  <text class="storeDescription">Become an affiliate of Clown Motel Inc., whose motels will home 10 clowns each.</text>
 			  <text class="storeFlavour">They have at least 5 channels! And some aren't black and white!</text>
@@ -141,7 +141,7 @@
 			<div class="storeOption build" id="clowndoStore">
 			  <img src="img/clowndo-export.png" class="storeImage">
 			  <button onclick="buildingPurchase('clowndo')" class="buildbutton">Buy Clowndo</button>
-			  <text id="clowndoOwned" class="storeDescription">Owned: 0</text><br>
+			  <text id="clowndoOwned" class="storeOwned">Owned: 0</text><br>
 			  <text id="clowndoCost" class="storeCost">Current cost is: %clowndoCost%</text><br>
 			  <text class="storeDescription">Purchase a condemned apartment block to convert it into housing for 20 clowns!</text>
 			  <text class="storeFlavour">Asbestos free!</text>
@@ -150,7 +150,7 @@
 			<div class="storeOption build" id="hotelStore">
 			  <img src="img/hotel-export.png" class="storeImage">
 			  <button onclick="buildingPurchase('hotel')" class="buildbutton">Buy Hotel</button>
-			  <text id="hotelOwned" class="storeDescription">Owned: 0</text><br>
+			  <text id="hotelOwned" class="storeOwned">Owned: 0</text><br>
 			  <text id="hotelCost" class="storeCost">Current cost is: %hotelCost%</text><br>
 			  <text class="storeDescription">Establish a hotel chain which prioritises 50 clown guests at a time.</text>
 			  <text class="storeFlavour">We shall never deny a guest even the most ridiculous request.</text>
@@ -159,7 +159,7 @@
 			<div class="storeOption build" id="mansionStore">
 			  <img src="" class="storeImage">
 			  <button onclick="buildingPurchase('mansion')" class="buildbutton">Buy Mansion</button>
-			  <text id="mansionOwned" class="storeDescription">Owned: 0</text><br>
+			  <text id="mansionOwned" class="storeOwned">Owned: 0</text><br>
 			  <text id="mansionCost" class="storeCost">Current cost is: %mansionCost%</text><br>
 			  <text class="storeDescription">Build a mansion! Houses less clowns than a hotel but makes them happier. 30 Clowns but 50 higher contempt limit.</text>
 			  <text class="storeFlavour">Clowns of Beverley Hills</text>
@@ -168,7 +168,7 @@
 			<div class="storeOption build" id="townStore">
 			  <img src="" class="storeImage">
 			  <button onclick="buildingPurchase('town')" class="buildbutton">Buy Town</button>
-			  <text id="townOwned" class="storeDescription">Owned: 0</text><br>
+			  <text id="townOwned" class="storeOwned">Owned: 0</text><br>
 			  <text id="townCost" class="storeCost">Current cost is: %townCost%</text><br>
 			  <text class="storeDescription">Use your large wealth to buy the rights to a town. Population 100. Generates income as taxes.</text>
 			  <text class="storeFlavour">Clown Detroit</text>
@@ -177,7 +177,7 @@
 			<div class="storeOption build" id="countryStore">
 			  <img src="" class="storeImage">
 			  <button onclick="buildingPurchase('country')" class="buildbutton">Buy Country</button>
-			  <text id="countryOwned" class="storeDescription">Owned: 0</text><br>
+			  <text id="countryOwned" class="storeOwned">Owned: 0</text><br>
 			  <text id="countryCost" class="storeCost">Current cost is: %countryCost%</text><br>
 			  <text class="storeDescription">Fund a coup to take over a small country. Populated exclusively by 500 clowns. Generates more income than a town.</text>
 			  <text class="storeFlavour">El Presidente Boo Boo</text>
@@ -186,7 +186,7 @@
 			<div class="storeOption build" id="spireStore">
 			  <img src="" class="storeImage">
 			  <button onclick="buildingPurchase('spire')" class="buildbutton">Construct Spire.</button>
-			  <text id="spireOwned" class="storeDescription">Owned: 0</text><br>
+			  <text id="spireOwned" class="storeOwned">Owned: 0</text><br>
 			  <text id="spireCost" class="storeCost">Current cost is: %spireCost%</text><br>
 			  <text class="storeDescription">Erect a tower. A thousand clowns reside in this monument to Clowndom. Slowly generate fear.</text>
 			  <text class="storeFlavour">Shadow of the Clownossus</text>
@@ -195,7 +195,7 @@
 			<div class="storeOption build" id="hiveStore">
 			  <img src="" class="storeImage">
 			  <button onclick="buildingPurchase('hive')" class="buildbutton">Form Hive.</button>
-			  <text id="hiveOwned" class="storeDescription">Owned: 0</text><br>
+			  <text id="hiveOwned" class="storeOwned">Owned: 0</text><br>
 			  <text id="hiveCost" class="storeCost">Current cost is: %hiveCost%</text><br>
 			  <text class="storeDescription">Spawn a hive. Hives home an ever-increasing number of clowns. Less effective at higher numbers.</text>
 			  <text class="storeFlavour">*Chitter chitter*</text>
@@ -228,7 +228,7 @@
     </div>
     
     
-   
+  
    
   </div>
   
