@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head>
+<title>Welcome to the LightBelt</title>
+<link rel="icon" href="https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/img/galaxy.png">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="script.js"></script> 
+</head>
+
+<body>
+
+<div class="wrapper">
+	<div class="companyName">LightBelt Studios</div>
+
+
+	<img src="https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/img/star1.png" onclick="openClose('star1')" class="inst1 star"></button>
+	<img src="https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/img/star2.png" onclick="openClose('star2')" class="inst2 star"></button>
+	<img src="https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/img/star3.png" onclick="openClose('star3')" class="inst3 star"></button>
+	
+
+	
+	<div id="star1" class="inst inst1" style="display:none;">
+		<div class="bar">
+			Max's Homeplanet
+			
+			<div class="close" onclick="openClose('star1')">x</div>
+		</div>
+			<div class="infoWrapper">
+				<div style="width:320px;height:200px;">
+					Bio:<br>
+					Game Design Student at Leeds Beckett, 3D modeller and amateur coder hoping to make indie games for a living. Coded a fair bit of Clown's Circus and always looking for ways to improve what I do. The not-so-artsy one.<br><br>
+				</div>
+					Links:<br>
+					<a href="https://inefficientrodent.github.io/maxHomePage/main.html" style="color:white;" target="_blank">Homepage</a><br>
+					<a href="https://twitter.com/beeg_fawks" style="color:white;" target="_blank">Twitter</a>
+				
+			</div>
+			
+		
+	</div>
+	
+
+	<div id="star2" class="inst inst2" style="display:none">
+		<div class="bar">
+			Rai's Homeplanet
+			
+			<div class="close" onclick="openClose('star2')">x</div>
+		</div>
+			<div class="infoWrapper">
+				<div style="width:320px;height:200px;">
+					Bio:<br>
+					I'm Rai, a Game Design student at Abertay! I mostly focus on art assets (with the exception of the lovely background and stars on this page- that was Max!) but I help around where I can with code.<br><br>
+				</div>
+					Links:<br>
+					<a href="https://twitter.com/h0zatin" style="color:white;"> Twitter</a>
+			</div>
+	</div>
+	
+	
+	<div id="star3" class="inst inst3" style="display:none;">
+		<div class="bar">
+			Clown's Circus
+			
+			<div class="close" onclick="openClose('star3')">x</div>	
+		</div>
+		<div class="infoWrapper">
+			<div style="width:320px;height:200px;">
+				Info:<br>
+				Our first project! Born out of a shared fever dream that we dub the Clown-verse, we have big plans for this game and hope to contine working on it into the future with more features, more playability, and of course - more clowns.<br><br>
+			</div>
+			Link:<br>
+			<a href="https://inefficientrodent.github.io/LightBeltGames/ClownFolder/main.html" style="color:red">Clown's Circus.</a> (Beta)
+		</div>
+	</div>
+
+	
+	<div class="toolBar">
+		<div class="toolbarIcon"></div>
+		
+		<div class="toolbarIcon"></div>
+		
+		<div class="toolbarIcon" onmouseover="showBox('infStar1')" onmouseout="hideBox('infStar1')"><img src="https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/img/star1.png" onclick="openClose('star1')" class="star toolbarImg"></button></div>
+		
+		
+		
+		<div class="toolbarIcon" onmouseover="showBox('infStar2')" onmouseout="hideBox('infStar2')"><img src="https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/img/star2.png" onclick="openClose('star2')" class="star toolbarImg"></button></div>
+		
+		<div class="toolbarIcon" onmouseover="showBox('infStar3')" onmouseout="hideBox('infStar3')"><img src="https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/img/star3.png" onclick="openClose('star3')" class="star toolbarImg"></button></div>
+		
+	</div>
+
+	<div id="infStar1" class="infoBox">Max's Homeplanet</div>
+	<div id="infStar2" class="infoBox">Rai's Homeplanet</div>
+	<div id="infStar3" class="infoBox">Clown's Circus</div>
+	
+</div>
+
+</body>

@@ -1,0 +1,198 @@
+body {
+	background:url('https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/img/galaxy.png') no-repeat center fixed;
+	background-size:cover;
+	font-family:"Lucida Console", Courier, monospace;
+	overflow:hidden;
+	color:white;
+}
+
+.wrapper {
+	overflow:none;
+	min-height:100%;
+	max-height:100%;
+	min-width:100%;
+	max-width:100%;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+.companyName {
+	font-size:50px;
+	text-align:center;
+	position:absolute;
+	top:31%;
+	left:40%;
+	transform:translate(-70%, -60%);
+	text-shadow:5px 5px 10px black;
+	animation: growShrink 5s;
+	animation-iteration-count:infinite;
+}
+
+@keyframes growShrink {
+	0% {
+		transform:scale(1);
+	}
+	50% {
+		transform:scale(1.09);
+	}
+	100% {
+		transform:scale(1);
+	}
+}
+
+.star {
+	height:40px;
+	width:40px;
+}
+
+.star:hover {
+	transition:all .2s ease-in-out;
+	transform: scale(2);
+	border:0px;
+}
+
+.star:active {
+	transform: scale(0);
+	border:0px;
+}
+
+.inst {
+	z-index: 9;
+	background-color:#171717;
+	border:3px solid white;
+	min-height: 300px;
+	min-width: 275px;
+	max-height: 500px;
+	max-width: 600px;
+	/*
+	width:200px;
+	height:300px;
+	resize:both;
+	transform:translate(50px, -20px);
+	*/
+}
+
+.inst {
+	position: absolute;
+	overflow-y:hidden;
+	overflow-x:hidden;
+	box-shadow:5px 5px 10px black;
+}
+
+.inst .resize-right {
+	width: 5px;
+	height: 100%;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	cursor: e-resize;
+}
+
+.inst .resizer-bottom {
+  width: 100%;
+  height: 5px;
+  background: transparent;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: n-resize;
+}
+
+.inst .resizer-both {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: nw-resize;
+}
+
+.inst * {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+
+.inst1 {
+	position:absolute;
+	top:24%;
+	left:17%;
+}
+
+.inst2 {
+	position:absolute;
+	top:64%;
+	left:85%;
+}
+
+.inst3 {
+	position:absolute;
+	top:38%;
+	left:64%;
+}
+
+.bar {
+	cursor:move;
+	position:relative;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:25px;
+	background-color:gray;
+	text-indent:5px;
+	color:white;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.close {
+	height:auto;
+	width:auto;
+	cursor:pointer;
+	border:1px solid black;
+	float:right;
+	padding-right:5px;
+	background-color:#999999;
+}
+
+.infoWrapper {
+	position:absolute;
+	padding:5px;
+}
+
+.toolBar {
+	width:100%;
+	opacity: 0.5;
+	height:40px;
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	background-color:gray;
+	background-image:url(https://raw.githubusercontent.com/inefficientRodent/LightBeltGames/master/img/gradient.png);
+}
+
+.toolbarIcon {
+	width:40px;
+	height:100%;
+	background-color:white;
+	display:inline-block;
+}
+
+.infoBox {
+	position:absolute;
+	display:none;
+	height:30px;
+	width:200px;
+	bottom:40px;
+	left:40px;
+	
+}
