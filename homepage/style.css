@@ -20,6 +20,7 @@ body {
 }
 
 .star {
+	cursor:pointer;
 	height:40px;
 	width:40px;
 }
@@ -165,6 +166,7 @@ body {
 	left: 30%;
 }
 .info {
+	cursor:pointer;
 	width:40px;
 	height:40px;
 }
